@@ -27,6 +27,7 @@ type Rider = {
   id: string
   name: string
   phone: string
+  is_active: boolean
   active_jobs: number
 }
 
@@ -375,11 +376,13 @@ function AssignModal({
         className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
       >
         <option value="">Select rider…</option>
-        {riders.map((r) => (
-          <option key={r.id} value={r.id}>
-            {r.name} ({r.active_jobs} active)
-          </option>
-        ))}
+        {riders
+          .filter((r) => r.is_active)
+          .map((r) => (
+            <option key={r.id} value={r.id}>
+              {r.name} ({r.active_jobs} active)
+            </option>
+          ))}
       </select>
 
       {error && (

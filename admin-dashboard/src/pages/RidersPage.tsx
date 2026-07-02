@@ -5,13 +5,17 @@ type Rider = {
   id: string
   name: string
   phone: string
+  is_active: boolean
   active_jobs: number
+  total_jobs: number
 }
 
 export default function RidersPage() {
   const [riders, setRiders] = useState<Rider[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [actionError, setActionError] = useState<string | null>(null)
+  const [busyId, setBusyId] = useState<string | null>(null)
 
   const [showForm, setShowForm] = useState(false)
   const [name, setName] = useState('')
@@ -57,10 +61,10 @@ export default function RidersPage() {
         password,
         role: 'rider',
       })
-      // Surface the new rider immediately — register returns the user without a count.
+      // Surface the new rider immediately — register returns the user without counts.
       setRiders((prev) =>
-        [...prev, { ...res.data.user, active_jobs: 0 }].sort((a, b) =>
-          a.name.localeCompare(b.name),
+        [...prev, { ...res.data.user, is_active: true, active_jobs: 0, total_jobs: 0 }].sort(
+          (a, b) => a.name.localeCompare(b.name),
         ),
       )
       resetForm()
@@ -72,6 +76,43 @@ export default function RidersPage() {
       setFormError(message)
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  const toggleActive = async (rider: Rider) => {
+    setActionError(null)
+    setBusyId(rider.id)
+    try {
+      const res = await api.patch(`/api/riders/${rider.id}/active`, {
+        is_active: !rider.is_active,
+      })
+      setRiders((prev) =>
+        prev.map((r) => (r.id === rider.id ? { ...r, is_active: res.data.rider.is_active } : r)),
+      )
+    } catch (err: unknown) {
+      const message =
+        (err as { response?: { data?: { error?: string } } })?.response?.data?.error ||
+        'Failed to update rider'
+      setActionError(message)
+    } finally {
+      setBusyId(null)
+    }
+  }
+
+  const deleteRider = async (rider: Rider) => {
+    if (!window.confirm(`Delete rider ${rider.name}? This cannot be undone.`)) return
+    setActionError(null)
+    setBusyId(rider.id)
+    try {
+      await api.delete(`/api/riders/${rider.id}`)
+      setRiders((prev) => prev.filter((r) => r.id !== rider.id))
+    } catch (err: unknown) {
+      const message =
+        (err as { response?: { data?: { error?: string } } })?.response?.data?.error ||
+        'Failed to delete rider'
+      setActionError(message)
+    } finally {
+      setBusyId(null)
     }
   }
 
@@ -97,6 +138,12 @@ export default function RidersPage() {
       {loading && <p className="mt-6 text-sm text-gray-500">Loading riders…</p>}
       {error && <p className="mt-6 text-sm text-red-600">{error}</p>}
 
+      {actionError && (
+        <p className="mt-6 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+          {actionError}
+        </p>
+      )}
+
       {!loading && !error && riders.length === 0 && (
         <p className="mt-6 text-sm text-gray-500">No riders yet.</p>
       )}
@@ -106,15 +153,45 @@ export default function RidersPage() {
           {riders.map((rider) => (
             <div
               key={rider.id}
-              className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+              className={`flex flex-wrap items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm ${
+                rider.is_active ? '' : 'opacity-70'
+              }`}
             >
               <div>
                 <div className="font-medium text-gray-900">{rider.name}</div>
                 <div className="text-sm text-gray-500">{rider.phone}</div>
               </div>
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                {rider.active_jobs} active
-              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                {!rider.is_active && (
+                  <span className="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-700">
+                    inactive
+                  </span>
+                )}
+                <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                  {rider.active_jobs} active
+                </span>
+                <button
+                  type="button"
+                  onClick={() => toggleActive(rider)}
+                  disabled={busyId === rider.id}
+                  className="rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-700 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {rider.is_active ? 'Deactivate' : 'Reactivate'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => deleteRider(rider)}
+                  disabled={busyId === rider.id || rider.total_jobs > 0}
+                  title={
+                    rider.total_jobs > 0
+                      ? 'Riders with job history cannot be deleted — deactivate instead'
+                      : undefined
+                  }
+                  className="rounded-md border border-red-300 px-2.5 py-1 text-xs font-medium text-red-700 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           ))}
         </div>

@@ -207,10 +207,10 @@ router.patch(
     const { id } = req.params
     const { rider_id } = req.body
 
-    // Ensure the target user is actually a rider.
+    // Ensure the target user is actually an active rider.
     const { data: rider, error: riderError } = await supabase
       .from('users')
-      .select('id, role, expo_push_token')
+      .select('id, role, expo_push_token, is_active')
       .eq('id', rider_id)
       .maybeSingle()
 
@@ -219,6 +219,9 @@ router.patch(
     }
     if (!rider || rider.role !== 'rider') {
       return res.status(400).json({ error: 'rider_id does not belong to a rider' })
+    }
+    if (!rider.is_active) {
+      return res.status(400).json({ error: 'Rider is deactivated and cannot be assigned jobs' })
     }
 
     // Only assign when the job is still pending (guards against double-assignment).
