@@ -50,9 +50,10 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
 
   const openInMaps = (address) => {
     const query = encodeURIComponent(address)
-    Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${query}`).catch(() =>
-      Alert.alert('Unable to open Maps'),
-    )
+    Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${query}`).catch((err) => {
+      console.error(err)
+      Alert.alert('Unable to open Maps')
+    })
   }
 
   const patchStatus = async (body) => {
@@ -65,7 +66,8 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
     try {
       await patchStatus({ status: 'picked_up' })
     } catch (err) {
-      Alert.alert('Error', err?.response?.data?.error || 'Failed to update status')
+      console.error(err)
+      Alert.alert('Error', 'Could not update the job status. Please try again.')
     } finally {
       setBusy(false)
     }
@@ -96,7 +98,6 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
         .from(PHOTO_BUCKET)
         .upload(path, base64ToBytes(asset.base64), {
           contentType: 'image/jpeg',
-          upsert: true,
         })
       if (uploadError) throw uploadError
 
@@ -105,7 +106,8 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
       // 3. Mark delivered with the photo URL.
       await patchStatus({ status: 'delivered', delivery_photo_url: publicData.publicUrl })
     } catch (err) {
-      Alert.alert('Error', err?.response?.data?.error || err?.message || 'Failed to mark delivered')
+      console.error(err)
+      Alert.alert('Error', 'Could not mark this job as delivered. Please try again.')
     } finally {
       setBusy(false)
     }
@@ -119,7 +121,8 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
       setFailModalVisible(false)
       setFailureReason('')
     } catch (err) {
-      Alert.alert('Error', err?.response?.data?.error || 'Failed to update status')
+      console.error(err)
+      Alert.alert('Error', 'Could not update the job status. Please try again.')
     } finally {
       setBusy(false)
     }
@@ -131,7 +134,8 @@ export default function JobDetailScreen({ job: initialJob, onBack }) {
       const res = await api.patch(`/api/jobs/${job.id}/payment`, { payment_status: 'confirmed' })
       setJob(res.data.job)
     } catch (err) {
-      Alert.alert('Error', err?.response?.data?.error || 'Failed to confirm payment')
+      console.error(err)
+      Alert.alert('Error', 'Could not confirm payment. Please try again.')
     } finally {
       setBusy(false)
     }

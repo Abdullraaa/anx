@@ -66,6 +66,7 @@ export default function JobsScreen({ onOpenJob }) {
       const res = await api.get('/api/rider/jobs')
       setJobs(res.data.jobs)
     } catch (err) {
+      console.error(err)
       setError('Failed to load jobs')
     }
   }, [])

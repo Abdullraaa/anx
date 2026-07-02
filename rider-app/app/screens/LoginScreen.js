@@ -29,6 +29,7 @@ export default function LoginScreen() {
       // automatically once the auth session updates.
       registerForPushNotifications()
     } catch (err) {
+      console.error(err)
       setError(err.message || 'Login failed')
     } finally {
       setSubmitting(false)
