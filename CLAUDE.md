@@ -17,6 +17,30 @@ anx/
 
 `admin-dashboard` and `backend` are pnpm workspace packages (see `pnpm-workspace.yaml`). `rider-app` is a plain directory in the monorepo (not a workspace package, not a git submodule) with its own `package.json`/`pnpm-lock.yaml`; run its commands from inside `rider-app/`.
 
+`Build.md` is the original phase-by-phase build plan and locked product decisions (Abuja zone-based pricing, fixed rider pay, admin-created jobs, etc.) — read it for product intent, not current implementation state.
+
+## Architecture
+
+Both clients (admin + rider) share the same shape: they own a **Supabase JS client** and authenticate **directly against Supabase Auth** (`supabase.auth.signInWithPassword`), persisting the session client-side (browser storage / `AsyncStorage`). Every call to the Express backend goes through an axios instance whose request interceptor attaches the current `session.access_token` as a `Bearer` header (`lib/api.*`). The backend never issues tokens to the running clients — it only **verifies** them in `requireAuth`.
+
+So there are effectively two auth surfaces, and this matters when debugging login:
+- **Client login is a direct Supabase call, not `POST /api/auth/login`.** That backend endpoint exists and mirrors the same logic server-side, but the shipped clients don't use it for login. `POST /api/auth/register` (admin-only) *is* the only way to create users — it uses `supabase.auth.admin.createUser` + a `users` row, and rolls back the auth user if the profile insert fails.
+- Reads/writes of domain data (jobs, zones, riders) go **client → Express → Supabase (service role)**. The backend bypasses RLS; the clients touching Supabase directly (rider Storage uploads) are the only place RLS is enforced.
+
+**Job status lifecycle** is the core domain model, enforced in `backend/src/routes/jobs.js` *and* mirrored in RLS (migration `001`):
+
+```
+pending ──assign(admin)──▶ assigned ──picked_up(rider)──▶ picked_up ──▶ delivered (photo required)
+                                                                    └──▶ failed    (reason required)
+   │
+   └── cancel(admin, reason) ──▶ cancelled   (allowed from any status except delivered/failed)
+```
+
+- Transitions are guarded by conditional `.update().eq('status', <expected>)` calls that return 409 if the row wasn't in the expected state (guards double-assignment / illegal jumps).
+- Riders can only advance jobs **assigned to themselves** (`assigned_rider_id === req.user.id`), and only the `picked_up → delivered/failed` steps. `delivered` requires `delivery_photo_url`; `failed` requires `failure_reason`.
+- `delivery_fee` is **derived server-side** from `zone_pricing` (pickup zone → dropoff zone) at job creation — never trust a client-supplied fee.
+- Cash jobs: rider confirms collection via `PATCH /api/jobs/:id/payment` (sets `payment_status` + `cash_remitted`).
+
 ## Commands
 
 ### Root
@@ -47,10 +71,14 @@ pnpm run ios
 
 ## Key details
 
+### Testing & linting
+There is **no test runner and no linter** configured in any package (no Jest/Vitest/ESLint). The only static check is TypeScript: `pnpm --filter admin-dashboard build` runs `tsc && vite build`, so a type error fails the admin build. The backend and rider-app are plain JS with no build/typecheck step. Don't invent a `pnpm test`/`pnpm lint` — they don't exist.
+
 ### admin-dashboard
 - Tailwind v4 via `@tailwindcss/vite` plugin — no `tailwind.config.js` needed; configured entirely in `vite.config.ts`
 - CSS entry: `src/index.css` with `@import "tailwindcss"`
-- Env vars must be prefixed `VITE_` to be exposed to the browser
+- Env vars must be prefixed `VITE_` to be exposed to the browser. Needs `VITE_API_URL` (backend base URL) plus the Supabase URL/anon key for the client.
+- Routing is `react-router-dom` in `src/App.tsx`; authed pages are wrapped in `ProtectedRoute` → `Layout`. `src/hooks/useAuth.tsx` (`AuthProvider`/`useAuth`) does the direct-Supabase login and loads the `users` profile. `src/lib/api.ts` redirects to `/login` on any `401`. `Map`/`Payouts`/`Reconciliation` routes are `ComingSoon` placeholders.
 - All screens must be fully mobile responsive
 
 ### backend
