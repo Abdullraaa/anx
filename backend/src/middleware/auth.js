@@ -15,12 +15,18 @@ export async function requireAuth(req, res, next) {
 
   const { data: profile, error: profileError } = await supabase
     .from('users')
-    .select('id, name, phone, role')
+    .select('id, name, phone, role, is_active')
     .eq('id', authData.user.id)
     .single()
 
   if (profileError || !profile) {
     return res.status(401).json({ error: 'User profile not found' })
+  }
+
+  // Deactivated accounts keep a valid Supabase session, so the block has to
+  // happen here — otherwise they reach every route behind requireAuth.
+  if (profile.is_active === false) {
+    return res.status(403).json({ error: 'Account deactivated' })
   }
 
   req.user = profile
