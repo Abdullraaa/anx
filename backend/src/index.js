@@ -24,3 +24,7 @@ app.use('/api', riderRoutes)
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
+
+// Vercel's Express preset imports the app (Root Directory = backend).
+// app.listen above stays for local dev via nodemon.
+export default app
