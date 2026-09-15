@@ -117,19 +117,19 @@ export default function RidersPage() {
   }
 
   const inputClass =
-    'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900'
+    'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange'
 
   return (
     <div className="mx-auto max-w-3xl">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold text-gray-900">Riders</h1>
+        <h1 className="text-xl font-extrabold text-anx-navy">Riders</h1>
         <button
           type="button"
           onClick={() => {
             resetForm()
             setShowForm(true)
           }}
-          className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+          className="rounded-md bg-anx-navy px-4 py-2 text-sm font-medium text-white hover:bg-anx-navy-700"
         >
           Add rider
         </button>
@@ -167,7 +167,7 @@ export default function RidersPage() {
                     inactive
                   </span>
                 )}
-                <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                <span className="inline-flex items-center rounded-full bg-anx-navy/10 px-2.5 py-0.5 text-xs font-medium text-anx-navy">
                   {rider.active_jobs} active
                 </span>
                 <button
@@ -201,7 +201,7 @@ export default function RidersPage() {
       {showForm && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/40 p-4 sm:items-center">
           <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl">
-            <h2 className="text-lg font-semibold text-gray-900">Add rider</h2>
+            <h2 className="text-lg font-extrabold text-anx-navy">Add rider</h2>
             <form className="mt-4 space-y-4" onSubmit={onSubmit}>
               <div>
                 <label htmlFor="rider_name" className="block text-sm font-medium text-gray-700">
@@ -266,7 +266,7 @@ export default function RidersPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="rounded-md bg-anx-navy px-4 py-2 text-sm font-medium text-white hover:bg-anx-navy-700 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {submitting ? 'Adding…' : 'Add rider'}
                 </button>

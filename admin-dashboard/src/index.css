@@ -1,1 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ANX brand */
+  --color-anx-navy: #0A1F44;
+  --color-anx-navy-700: #143061;   /* hover — lifts on dark fills */
+  --color-anx-orange: #FF7A00;
+  --color-anx-orange-ink: #7A3B00; /* readable orange for text on light tints */
+}

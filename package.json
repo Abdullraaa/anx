@@ -6,5 +6,6 @@
     "dev:admin": "pnpm --filter admin-dashboard dev",
     "dev:backend": "pnpm --filter backend dev",
     "dev": "concurrently \"pnpm dev:admin\" \"pnpm dev:backend\""
-  }
+  },
+  "packageManager": "pnpm@9.15.9"
 }
