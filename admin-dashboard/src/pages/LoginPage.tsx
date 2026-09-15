@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+import lockupNavy from '../assets/brand/lockup-navy-text-orange-navy-x.png'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -32,7 +33,9 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-sm space-y-6 rounded-lg bg-white p-6 shadow-sm sm:p-8">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-900">Admin sign in</h1>
+          <h1>
+            <img src={lockupNavy} alt="ANX Admin" className="h-14 w-auto" />
+          </h1>
           <p className="mt-1 text-sm text-gray-500">Use your phone number and password.</p>
         </div>
 
@@ -49,7 +52,7 @@ export default function LoginPage() {
               required
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange"
             />
           </div>
 
@@ -65,7 +68,7 @@ export default function LoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange"
             />
           </div>
 
@@ -78,7 +81,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="flex w-full justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
+            className="flex w-full justify-center rounded-md bg-anx-navy px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-anx-navy-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? 'Signing in…' : 'Sign in'}
           </button>

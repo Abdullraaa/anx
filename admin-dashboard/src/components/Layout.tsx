@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+import lockupWhite from '../assets/brand/lockup-white-solid.png'
+import lockupNavy from '../assets/brand/lockup-navy-text-orange-navy-x.png'
 
 type NavItem = {
   to: string
@@ -23,9 +25,9 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Desktop sidebar */}
-      <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:flex md:w-60 md:flex-col md:border-r md:border-gray-200 md:bg-white">
-        <div className="flex h-16 items-center px-6 text-lg font-semibold text-gray-900">
-          ANX Admin
+      <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:flex md:w-60 md:flex-col md:border-r md:border-white/10 md:bg-anx-navy">
+        <div className="flex h-16 items-center px-6">
+          <img src={lockupWhite} alt="ANX" className="h-11 w-auto" />
         </div>
         <nav className="flex-1 space-y-1 px-3 py-2">
           {navItems.map((item) => (
@@ -36,8 +38,8 @@ export default function Layout() {
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium ${
                   isActive
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-white/10 text-anx-orange'
+                    : 'text-white/70 hover:bg-white/10'
                 }`
               }
             >
@@ -52,7 +54,7 @@ export default function Layout() {
       <div className="flex min-h-screen flex-col md:pl-60">
         {/* Top bar */}
         <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-gray-200 bg-white px-4 sm:px-6">
-          <span className="text-base font-semibold text-gray-900 md:hidden">ANX Admin</span>
+          <img src={lockupNavy} alt="ANX" className="h-10 w-auto md:hidden" />
           <div className="ml-auto flex items-center gap-3">
             {user && (
               <span className="hidden text-sm text-gray-600 sm:inline">
@@ -84,7 +86,7 @@ export default function Layout() {
             end={item.to === '/jobs'}
             className={({ isActive }) =>
               `flex flex-col items-center gap-0.5 py-2 text-[10px] font-medium ${
-                isActive ? 'text-gray-900' : 'text-gray-500'
+                isActive ? 'text-anx-orange' : 'text-gray-500'
               }`
             }
           >

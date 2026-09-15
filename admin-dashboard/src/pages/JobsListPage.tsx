@@ -46,13 +46,15 @@ const completedStatuses: JobStatus[] = ['delivered', 'failed', 'cancelled']
 // Jobs that can no longer be cancelled.
 const finalStatuses: JobStatus[] = ['delivered', 'failed']
 
+// Brand colours carry the in-flight pipeline; green/red stay on the terminal
+// outcomes so delivered vs failed remains scannable at a glance.
 const statusStyles: Record<JobStatus, string> = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  assigned: 'bg-blue-100 text-blue-800',
-  picked_up: 'bg-orange-100 text-orange-800',
+  pending: 'bg-slate-100 text-slate-700',
+  assigned: 'bg-anx-navy/10 text-anx-navy',
+  picked_up: 'bg-anx-orange/15 text-anx-orange-ink',
   delivered: 'bg-green-100 text-green-800',
   failed: 'bg-red-100 text-red-800',
-  cancelled: 'bg-gray-200 text-gray-700',
+  cancelled: 'bg-gray-200 text-gray-600',
 }
 
 const statusLabel = (status: JobStatus) => status.replace('_', ' ')
@@ -135,7 +137,7 @@ export default function JobsListPage() {
           <button
             type="button"
             onClick={() => setAssignTarget(job)}
-            className="rounded-md bg-gray-900 px-2.5 py-1 text-xs font-medium text-white hover:bg-gray-800"
+            className="rounded-md bg-anx-navy px-2.5 py-1 text-xs font-medium text-white hover:bg-anx-navy-700"
           >
             Assign rider
           </button>
@@ -156,10 +158,10 @@ export default function JobsListPage() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold text-gray-900">Jobs</h1>
+        <h1 className="text-xl font-extrabold text-anx-navy">Jobs</h1>
         <Link
           to="/jobs/new"
-          className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+          className="rounded-md bg-anx-navy px-4 py-2 text-sm font-medium text-white hover:bg-anx-navy-700"
         >
           Create job
         </Link>
@@ -174,7 +176,7 @@ export default function JobsListPage() {
             onClick={() => setTab(t.key)}
             className={`rounded-full px-3 py-1.5 text-sm font-medium ${
               tab === t.key
-                ? 'bg-gray-900 text-white'
+                ? 'bg-anx-navy text-white'
                 : 'bg-white text-gray-600 ring-1 ring-gray-300 hover:bg-gray-100'
             }`}
           >
@@ -360,7 +362,7 @@ function AssignModal({
 
   return (
     <ModalShell>
-      <h2 className="text-lg font-semibold text-gray-900">Assign rider</h2>
+      <h2 className="text-lg font-extrabold text-anx-navy">Assign rider</h2>
       <p className="mt-1 text-sm text-gray-500">
         Job for {job.customer_name} · {job.pickup_zone?.name ?? '—'} →{' '}
         {job.dropoff_zone?.name ?? '—'}
@@ -373,7 +375,7 @@ function AssignModal({
         id="assign_rider"
         value={riderId}
         onChange={(e) => setRiderId(e.target.value)}
-        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange"
       >
         <option value="">Select rider…</option>
         {riders
@@ -403,7 +405,7 @@ function AssignModal({
           type="button"
           onClick={confirm}
           disabled={!riderId || submitting}
-          className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-md bg-anx-navy px-4 py-2 text-sm font-medium text-white hover:bg-anx-navy-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {submitting ? 'Assigning…' : 'Confirm'}
         </button>
@@ -445,7 +447,7 @@ function CancelModal({
   return (
     <ModalShell>
       <form onSubmit={confirm}>
-        <h2 className="text-lg font-semibold text-gray-900">Cancel job</h2>
+        <h2 className="text-lg font-extrabold text-anx-navy">Cancel job</h2>
         <p className="mt-1 text-sm text-gray-500">
           Cancelling the job for {job.customer_name}. This can't be undone.
         </p>
@@ -459,7 +461,7 @@ function CancelModal({
           required
           value={reason}
           onChange={(e) => setReason(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange"
         />
 
         {error && (

@@ -108,11 +108,11 @@ export default function CreateJobPage() {
   }
 
   const inputClass =
-    'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900'
+    'mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-base shadow-sm focus:border-anx-orange focus:outline-none focus:ring-1 focus:ring-anx-orange'
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="text-xl font-semibold text-gray-900">Create job</h1>
+      <h1 className="text-xl font-extrabold text-anx-navy">Create job</h1>
       <p className="mt-1 text-sm text-gray-500">
         Delivery fee is calculated automatically from the selected zones.
       </p>
@@ -259,7 +259,7 @@ export default function CreateJobPage() {
                   onClick={() => update('payment_method', method)}
                   className={`rounded px-4 py-1.5 text-sm font-medium capitalize ${
                     form.payment_method === method
-                      ? 'bg-gray-900 text-white'
+                      ? 'bg-anx-navy text-white'
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
@@ -274,7 +274,7 @@ export default function CreateJobPage() {
         <div className="rounded-md border border-gray-200 bg-white px-4 py-3">
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium text-gray-700">Delivery fee</span>
-            <span className="text-lg font-semibold text-gray-900">
+            <span className="text-lg font-extrabold text-anx-navy">
               {feeLoading
                 ? 'Calculating…'
                 : fee !== null
@@ -294,7 +294,7 @@ export default function CreateJobPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="flex w-full justify-center rounded-md bg-gray-900 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="flex w-full justify-center rounded-md bg-anx-navy px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-anx-navy-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {submitting ? 'Creating…' : 'Create job'}
         </button>
