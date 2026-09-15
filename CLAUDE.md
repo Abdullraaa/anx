@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Always use **pnpm**. Never use npm or yarn.
 
+`package.json` pins `"packageManager": "pnpm@9.15.9"`. **Don't remove it.** Both lockfiles are `lockfileVersion: 9.0`; without the pin, corepack resolves a pnpm 12.x and mismatches them.
+
 ## Monorepo structure
 
 ```
@@ -16,6 +18,8 @@ anx/
 ```
 
 `admin-dashboard` and `backend` are pnpm workspace packages (see `pnpm-workspace.yaml`). `rider-app` is a plain directory in the monorepo (not a workspace package, not a git submodule) with its own `package.json`/`pnpm-lock.yaml`; run its commands from inside `rider-app/`.
+
+**Work on `dev`, not `main`.** `dev` is the active branch; `main` is the deploy target — merging to it ships both Vercel projects *and* auto-applies migrations.
 
 `Build.md` is the original phase-by-phase build plan and locked product decisions (Abuja zone-based pricing, fixed rider pay, admin-created jobs, etc.) — read it for product intent, not current implementation state.
 
@@ -41,6 +45,26 @@ pending ──assign(admin)──▶ assigned ──picked_up(rider)──▶ pi
 - Riders can only advance jobs **assigned to themselves** (`assigned_rider_id === req.user.id`), and only the `picked_up → delivered/failed` steps. `delivered` requires `delivery_photo_url`; `failed` requires `failure_reason`.
 - `delivery_fee` is **derived server-side** from `zone_pricing` (pickup zone → dropoff zone) at job creation — never trust a client-supplied fee.
 - Cash jobs: rider confirms collection via `PATCH /api/jobs/:id/payment` (sets `payment_status` + `cash_remitted`).
+
+## Deployment & environments
+
+Both web packages deploy to Vercel under the **ANX** team (`anx-500a12d4`), from this repo:
+
+| Vercel project | Package | Notes |
+|---|---|---|
+| `anx-admin-dashboard` | `admin-dashboard/` | live at **www.anxlogistic.app** |
+| `anx-backend` | `backend/` | Root Directory = `backend`, Express preset |
+
+There is **no `vercel.json` or `.vercel/` in the repo** — Root Directory, env vars, and domains are all configured in the Vercel dashboard. You can't learn the deploy config by reading the tree.
+
+**Two Supabase projects share one schema:**
+
+| Project | Ref | Role |
+|---|---|---|
+| `rider-app` | `csqwqrujunejbyjbqgxc` | **production** — note the misleading name; nothing is called "prod" |
+| `anx-dev` | `yzkebxfcffpqizxrxffv` | dev, same migrations applied, no real data |
+
+**Open gap — no env convention exists yet.** All three local `.env` files currently point at the **production** ref, and `.env.example` only has placeholders, so a local dev session reads and writes production by default. If you're doing anything destructive locally, repoint at `anx-dev` first and check with the user before assuming which project an env should target.
 
 ## Commands
 
@@ -92,7 +116,8 @@ There is **no test runner and no linter** configured in any package (no Jest/Vit
 - Uses the **service role key** (not anon key) for Supabase access — so backend queries **bypass RLS entirely**. RLS policies only matter for clients that talk to Supabase directly (e.g. the rider app's Storage uploads).
 - Middleware order: helmet → cors → express.json → routes
 - Auth model: no email — riders/admins log in with **phone + password**, mapped to a Supabase Auth email of `{phone}@logistics.app`. `POST /api/auth/login` returns `{ session, user }`. Protected routes use `requireAuth` (verifies the `Bearer` token, loads the `users` profile onto `req.user`); admin-only routes add `requireAdmin`.
-- SQL lives in `backend/supabase/migrations/` (`001` schema + RLS, `002` seed zones/pricing, `003` storage policies, `004` rider deactivation, `005` deactivation RLS + `is_my_account_active()`). **No Supabase CLI is linked** — apply migrations manually via the Supabase SQL Editor or `psql` (needs the DB password from the Supabase dashboard).
+- SQL lives in `backend/supabase/migrations/` (`001` schema + RLS, `002` seed zones/pricing, `003` storage policies, `004` rider deactivation, `005` deactivation RLS + `is_my_account_active()`). Migrations here **auto-apply to production on merge to `main`** via the Supabase–Vercel GitHub integration ("Deploy to production" enabled). Don't hand-apply a migration that's already merged — you'll run it twice.
+  - **The migration table is not a reliable record of production.** Production only tracks `005`; `001`–`004` were applied by hand in the SQL Editor before the integration existed and were never recorded. `anx-dev` tracks all five. Verify against the actual schema (`pg_policies`, `pg_proc`), not the migration list.
 - Delivery photos: Supabase Storage bucket `delivery-photos` (public-read, no size/mime limits). Riders upload directly from the app, so uploads require the Storage INSERT policy in migration `003`. **Never use `upsert: true` on these uploads** — Storage upserts require an UPDATE policy on `storage.objects` (even for brand-new paths), and only an INSERT policy exists, so upserts fail with an RLS violation.
 - There is **no separate riders table** — riders and admins are both rows in `users`, split by `role`. Rider deactivation is `users.is_active` (migration `004`): inactive riders keep all job/photo/payout history but are excluded from the assign-rider picker and rejected by `PATCH /api/jobs/:id/assign`. They can still obtain a session, but `requireAuth` rejects every protected route with `403 Account deactivated`, and migration `005` adds the same check to the rider job-UPDATE and delivery-photo Storage policies so a stale token can't bypass Express.
 - Rider management endpoints (admin-only): `GET /api/riders` (returns `is_active`, `active_jobs`, `total_jobs`), `PATCH /api/riders/:id/active` (deactivate/reactivate), `DELETE /api/riders/:id` (hard delete, **gated: 409 unless the rider has zero jobs of any status** — deactivation is the only option for riders with history; also removes the Supabase Auth account).
