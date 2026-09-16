@@ -124,7 +124,15 @@ There is **no test runner and no linter** configured in any package (no Jest/Vit
 
 ### rider-app
 - Env vars must be prefixed `EXPO_PUBLIC_` — Expo auto-loads them from `.env` into `process.env` (no manual loader). `.env` is gitignored; copy `.env.example` to `.env` and fill in values.
-- `EXPO_PUBLIC_API_URL` must be a **reachable `http://<host>:3000` URL** for the backend. On a physical device use the machine's LAN/Tailscale IP (not `localhost` or `0.0.0.0`, which won't resolve from the device). Env values are **inlined at bundle time** — after editing `.env`, restart Expo with `--clear` (`pnpm start --clear`) or the old value persists.
+- `EXPO_PUBLIC_API_URL` differs by target, and both cases are live:
+  - **Local dev (Expo Go / `pnpm start`)** — a reachable `http://<host>:3000` URL. On a physical device use the machine's LAN/Tailscale IP (not `localhost` or `0.0.0.0`, which won't resolve from the device).
+  - **Builds (`eas build`)** — the deployed backend: `https://anx-backend-anx-500a12d4.vercel.app`. A LAN IP in a build produces an APK that installs fine and then fails every request off that network.
+  - Either way values are **inlined at bundle time** — after editing `.env`, restart Expo with `--clear` (`pnpm start --clear`) or the old value persists.
+- **Build env vars live in two unsynced places.** `rider-app/.env` feeds Expo Go only; `eas build` reads variables stored on EAS (`eas env:set --name X --value Y --environment production --visibility plaintext`; inspect with `eas env:list --environment production`). `.env` is gitignored, so EAS never receives it — change one and the other silently goes stale. **Before trusting any build, read the line EAS prints at queue time:** `Environment variables ... loaded from the "production" environment on EAS: ...` means they're present; `No environment variables ... found` means the bundle will ship `undefined` for all of them. To confirm after the fact, the values are greppable in the APK's Hermes bundle (`grep -a` on `assets/index.android.bundle` — plain `grep -r` over the extracted tree finds nothing, since it's bytecode, not text).
+- EAS project is **`@anxs-team/anx-rider`** (`app.json` → `owner` + `extra.eas.projectId`), built with the `preview` profile in `eas.json` for an installable APK. The Android **keystore lives with the `anxs-team` Expo account** and signs every future update — don't rebuild this app under a different account.
+- **This machine's IPv6 egress is broken**, which makes `eas` fail intermittently with `request to https://api.expo.dev/graphql failed`. `curl -6` to that host fails while IPv4 returns 200. Prefix eas commands with:
+  `NODE_OPTIONS="--dns-result-order=ipv4first --network-family-autoselection-attempt-timeout=3000"`.
+  Machine-local problem, not a project one — drop it once IPv6 works.
 - Delivery photos are uploaded **directly to Supabase Storage** (bucket `delivery-photos`) from the app using the rider's session, then the returned public URL is sent to the backend when marking a job delivered.
 - Supabase client uses `AsyncStorage` for session persistence (`app/lib/supabase.js`)
 - `app/` layout:
