@@ -74,7 +74,16 @@ There is **no `vercel.json` or `.vercel/` in the repo** — Root Directory, env 
 | `rider-app` | `csqwqrujunejbyjbqgxc` | **production** — note the misleading name; nothing is called "prod" |
 | `anx-dev` | `yzkebxfcffpqizxrxffv` | dev, same migrations applied, no real data |
 
-**Open gap — no env convention exists yet.** All three local `.env` files currently point at the **production** ref, and `.env.example` only has placeholders, so a local dev session reads and writes production by default. If you're doing anything destructive locally, repoint at `anx-dev` first and check with the user before assuming which project an env should target.
+**Open gap — no env convention exists yet**, and `backend/.env` is currently *mismatched*:
+`SUPABASE_URL` points at **production** while `SUPABASE_SERVICE_ROLE_KEY` is an **anx-dev**
+key (verified: 200 against anx-dev, 401 `Invalid API key` against production). So
+`pnpm dev:backend` fails every Supabase call right now — the deployed backend is unaffected,
+since Vercel holds its own env vars. The admin-dashboard and rider-app anon keys are both
+valid for production.
+
+`.env.example` only has placeholders, so nothing documents which project an env should
+target. Check the URL *and* the key together before trusting a local `.env`, repoint at
+`anx-dev` before anything destructive, and ask rather than assume.
 
 ## Commands
 
@@ -131,6 +140,30 @@ There is **no test runner and no linter** configured in any package (no Jest/Vit
 - Delivery photos: Supabase Storage bucket `delivery-photos` (public-read, no size/mime limits). Riders upload directly from the app, so uploads require the Storage INSERT policy in migration `003`. **Never use `upsert: true` on these uploads** — Storage upserts require an UPDATE policy on `storage.objects` (even for brand-new paths), and only an INSERT policy exists, so upserts fail with an RLS violation.
 - There is **no separate riders table** — riders and admins are both rows in `users`, split by `role`. Rider deactivation is `users.is_active` (migration `004`): inactive riders keep all job/photo/payout history but are excluded from the assign-rider picker and rejected by `PATCH /api/jobs/:id/assign`. They can still obtain a session, but `requireAuth` rejects every protected route with `403 Account deactivated`, and migration `005` adds the same check to the rider job-UPDATE and delivery-photo Storage policies so a stale token can't bypass Express.
 - Rider management endpoints (admin-only): `GET /api/riders` (returns `is_active`, `active_jobs`, `total_jobs`), `PATCH /api/riders/:id/active` (deactivate/reactivate), `DELETE /api/riders/:id` (hard delete, **gated: 409 unless the rider has zero jobs of any status** — deactivation is the only option for riders with history; also removes the Supabase Auth account).
+
+### Known security follow-ups (not fixed)
+
+Supabase's security advisor flags four items, all `WARN`, none `ERROR`. Verified against
+production on 2026-09-20; **deliberately parked** until after the pitch. They predate and are
+unrelated to the role/column fixes in migration `006`. They apply to **both** Supabase
+projects (same schema), and the fix belongs in a migration (`007`) so it flows through the
+normal path rather than a console edit.
+
+| Advisor lint | Affects | Fix |
+|---|---|---|
+| `function_search_path_mutable` | `update_updated_at`, `get_my_role`, `restrict_rider_job_columns`, `is_my_account_active` | add `SET search_path = public` to each |
+| `anon_security_definer_function_executable` | `get_my_role`, `is_my_account_active`, `restrict_rider_job_columns` | `REVOKE EXECUTE ... FROM anon` |
+| `authenticated_security_definer_function_executable` | same three | `REVOKE EXECUTE ... FROM authenticated` |
+| `auth_leaked_password_protection` | Auth settings | enable HaveIBeenPwned checking (dashboard, not SQL) |
+
+Two judgements behind the "low priority" call, so they don't get re-derived:
+
+- **`search_path` is the one with real teeth.** A mutable `search_path` on a `SECURITY DEFINER`
+  function is the classic privilege-escalation shape. Fix this one first.
+- **The two RPC lints are close to noise.** `restrict_rider_job_columns` is a *trigger*
+  function — calling it over `/rest/v1/rpc/` errors out regardless of who calls it. And
+  `get_my_role()` / `is_my_account_active()` both read `auth.uid()`, which is `NULL` for
+  `anon`, so a logged-out caller gets `NULL` back, not somebody else's data.
 
 ### rider-app
 - Env vars must be prefixed `EXPO_PUBLIC_` — Expo auto-loads them from `.env` into `process.env` (no manual loader). `.env` is gitignored; copy `.env.example` to `.env` and fill in values.
