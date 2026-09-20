@@ -58,9 +58,10 @@ router.get(
 )
 
 // ── POST /api/jobs ────────────────────────────────────────
-// Create a delivery job. delivery_fee is derived from zone_pricing.
+// Create a delivery job. delivery_fee is derived from zone_pricing. Admin only.
 router.post(
   '/jobs',
+  requireAdmin,
   body('pickup_address').isString().trim().notEmpty(),
   body('pickup_zone_id').isUUID(),
   body('dropoff_address').isString().trim().notEmpty(),
@@ -133,9 +134,11 @@ router.post(
 
 // ── GET /api/jobs ─────────────────────────────────────────
 // All jobs, newest first, with zone names and assigned rider details.
-// Optional filters: status, date (YYYY-MM-DD).
+// Optional filters: status, date (YYYY-MM-DD). Admin only — this returns every
+// job's customer PII. Riders use GET /api/rider/jobs for their own list.
 router.get(
   '/jobs',
+  requireAdmin,
   query('status')
     .optional()
     .isIn(['pending', 'assigned', 'picked_up', 'delivered', 'failed', 'cancelled']),
