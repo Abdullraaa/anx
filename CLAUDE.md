@@ -32,7 +32,7 @@ So there are effectively two auth surfaces, and this matters when debugging logi
 - Reads/writes of domain data (jobs, zones, riders) go **client → Express → Supabase (service role)**. The backend bypasses RLS; the clients touching Supabase directly (rider Storage uploads) are the only place RLS is enforced.
 - **Deactivation is a shared contract.** `requireAuth` answers `403 { error: 'Account deactivated' }` for any user with `is_active = false`, admins included. Both clients match on that **message string** (not the status — `requireAdmin` also returns 403) and sign out. Deactivated users can still *sign in*, because login never touches Express; they are blocked on their first API call.
 
-**Job status lifecycle** is the core domain model, enforced in `backend/src/routes/jobs.js` *and* mirrored in RLS (migration `001`):
+**Job status lifecycle** is the core domain model, enforced **only** in `backend/src/routes/jobs.js`:
 
 ```
 pending ──assign(admin)──▶ assigned ──picked_up(rider)──▶ picked_up ──▶ delivered (photo required)
@@ -45,6 +45,16 @@ pending ──assign(admin)──▶ assigned ──picked_up(rider)──▶ pi
 - Riders can only advance jobs **assigned to themselves** (`assigned_rider_id === req.user.id`), and only the `picked_up → delivered/failed` steps. `delivered` requires `delivery_photo_url`; `failed` requires `failure_reason`.
 - `delivery_fee` is **derived server-side** from `zone_pricing` (pickup zone → dropoff zone) at job creation — never trust a client-supplied fee.
 - Cash jobs: rider confirms collection via `PATCH /api/jobs/:id/payment` (sets `payment_status` + `cash_remitted`).
+
+**The database does not enforce this state machine — Express alone does.** RLS and the
+`restrict_rider_job_columns` trigger govern *who* may update a job and *which columns* they
+may touch (migration `006` made that an allowlist: `status`, `payment_status`,
+`delivery_photo_url` only). Neither has any concept of a legal *transition*. So a client
+holding a valid rider token and talking to Supabase directly can still write states the API
+would reject — `delivered` with no photo, `assigned → delivered` skipping `picked_up`, or
+`payment_status = 'confirmed'` without the matching `cash_remitted`. Closing that would mean
+replicating the transition rules in a trigger; it has not been done. Treat any status written
+outside `jobs.js` as untrusted.
 
 ## Deployment & environments
 

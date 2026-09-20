@@ -1,19 +1,23 @@
 import { useEffect, useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import lockupNavy from '../assets/brand/lockup-navy-text-orange-navy-x.png'
 
 export default function LoginPage() {
   const navigate = useNavigate()
-  const { session, login } = useAuth()
+  const location = useLocation()
+  const { session, user, login } = useAuth()
   const [phone, setPhone] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  // ProtectedRoute redirects non-admins here with a reason.
+  const [error, setError] = useState<string | null>(
+    (location.state as { error?: string } | null)?.error ?? null,
+  )
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
-    if (session) navigate('/dashboard', { replace: true })
-  }, [session, navigate])
+    if (session && user?.role === 'admin') navigate('/dashboard', { replace: true })
+  }, [session, user, navigate])
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
