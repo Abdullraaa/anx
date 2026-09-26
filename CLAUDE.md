@@ -74,16 +74,21 @@ There is **no `vercel.json` or `.vercel/` in the repo** — Root Directory, env 
 | `rider-app` | `csqwqrujunejbyjbqgxc` | **production** — note the misleading name; nothing is called "prod" |
 | `anx-dev` | `yzkebxfcffpqizxrxffv` | dev, same migrations applied, no real data |
 
-**Open gap — no env convention exists yet**, and `backend/.env` is currently *mismatched*:
-`SUPABASE_URL` points at **production** while `SUPABASE_SERVICE_ROLE_KEY` is an **anx-dev**
-key (verified: 200 against anx-dev, 401 `Invalid API key` against production). So
-`pnpm dev:backend` fails every Supabase call right now — the deployed backend is unaffected,
-since Vercel holds its own env vars. The admin-dashboard and rider-app anon keys are both
-valid for production.
+**Env convention: every local `.env` targets `anx-dev`, never production.** All three
+(`backend`, `admin-dashboard`, `rider-app`) point at `yzkebxfcffpqizxrxffv`, and each
+`.env.example` now names the project and its ref so a fresh copy lands on the right one.
+Production is reached only through the deployed apps, which hold their own vars in Vercel.
 
-`.env.example` only has placeholders, so nothing documents which project an env should
-target. Check the URL *and* the key together before trusting a local `.env`, repoint at
-`anx-dev` before anything destructive, and ask rather than assume.
+**The URL and key must come from the same project.** `backend/.env` previously paired a
+production URL with an anx-dev service-role key, which fails every call with
+`Invalid API key` — a confusing symptom, since the key itself is valid, just not for that
+project. Two quick checks before trusting a local `.env`:
+- the anon key is a JWT whose `ref` claim must equal the URL's subdomain
+- for a service-role key, `GET {URL}/rest/v1/zones?select=id&limit=1` with
+  `apikey` + `Authorization: Bearer` returns 200 when the pair matches, 401 when it doesn't
+
+Because local dev now reads and writes **anx-dev**, seeded data there is expected to differ
+from production; check the ref before concluding something is broken.
 
 ## Commands
 
