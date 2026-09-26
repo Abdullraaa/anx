@@ -1,0 +1,3002 @@
+[
+  {
+    "from": "Airport Road",
+    "to": "Apo",
+    "price": 4300
+  },
+  {
+    "from": "Airport Road",
+    "to": "Asokoro",
+    "price": 4800
+  },
+  {
+    "from": "Airport Road",
+    "to": "Central Area",
+    "price": 4600
+  },
+  {
+    "from": "Airport Road",
+    "to": "Dakwo",
+    "price": 3700
+  },
+  {
+    "from": "Airport Road",
+    "to": "Durumi",
+    "price": 4400
+  },
+  {
+    "from": "Airport Road",
+    "to": "Dutse",
+    "price": 4700
+  },
+  {
+    "from": "Airport Road",
+    "to": "Galadimawa",
+    "price": 3700
+  },
+  {
+    "from": "Airport Road",
+    "to": "Garki",
+    "price": 4500
+  },
+  {
+    "from": "Airport Road",
+    "to": "Gudu",
+    "price": 4100
+  },
+  {
+    "from": "Airport Road",
+    "to": "Gwarinpa",
+    "price": 4600
+  },
+  {
+    "from": "Airport Road",
+    "to": "Jabi",
+    "price": 4300
+  },
+  {
+    "from": "Airport Road",
+    "to": "Jahi",
+    "price": 4400
+  },
+  {
+    "from": "Airport Road",
+    "to": "Kado",
+    "price": 4600
+  },
+  {
+    "from": "Airport Road",
+    "to": "Karu",
+    "price": 5300
+  },
+  {
+    "from": "Airport Road",
+    "to": "Kubwa",
+    "price": 4900
+  },
+  {
+    "from": "Airport Road",
+    "to": "Kuje",
+    "price": 4300
+  },
+  {
+    "from": "Airport Road",
+    "to": "Lokogoma",
+    "price": 4100
+  },
+  {
+    "from": "Airport Road",
+    "to": "Lugbe",
+    "price": 3200
+  },
+  {
+    "from": "Airport Road",
+    "to": "Maitama",
+    "price": 4900
+  },
+  {
+    "from": "Airport Road",
+    "to": "Mpape",
+    "price": 4800
+  },
+  {
+    "from": "Airport Road",
+    "to": "Nyanya",
+    "price": 5000
+  },
+  {
+    "from": "Airport Road",
+    "to": "Utako",
+    "price": 4400
+  },
+  {
+    "from": "Airport Road",
+    "to": "Wuse",
+    "price": 4600
+  },
+  {
+    "from": "Airport Road",
+    "to": "Wuse 2",
+    "price": 4600
+  },
+  {
+    "from": "Apo",
+    "to": "Airport Road",
+    "price": 4300
+  },
+  {
+    "from": "Apo",
+    "to": "Asokoro",
+    "price": 3500
+  },
+  {
+    "from": "Apo",
+    "to": "Central Area",
+    "price": 3600
+  },
+  {
+    "from": "Apo",
+    "to": "Dakwo",
+    "price": 3700
+  },
+  {
+    "from": "Apo",
+    "to": "Durumi",
+    "price": 3500
+  },
+  {
+    "from": "Apo",
+    "to": "Dutse",
+    "price": 4700
+  },
+  {
+    "from": "Apo",
+    "to": "Galadimawa",
+    "price": 3600
+  },
+  {
+    "from": "Apo",
+    "to": "Garki",
+    "price": 3300
+  },
+  {
+    "from": "Apo",
+    "to": "Gudu",
+    "price": 3400
+  },
+  {
+    "from": "Apo",
+    "to": "Gwarinpa",
+    "price": 4200
+  },
+  {
+    "from": "Apo",
+    "to": "Jabi",
+    "price": 4000
+  },
+  {
+    "from": "Apo",
+    "to": "Jahi",
+    "price": 4100
+  },
+  {
+    "from": "Apo",
+    "to": "Kado",
+    "price": 4000
+  },
+  {
+    "from": "Apo",
+    "to": "Karu",
+    "price": 4000
+  },
+  {
+    "from": "Apo",
+    "to": "Kubwa",
+    "price": 5000
+  },
+  {
+    "from": "Apo",
+    "to": "Kuje",
+    "price": 5600
+  },
+  {
+    "from": "Apo",
+    "to": "Lokogoma",
+    "price": 3300
+  },
+  {
+    "from": "Apo",
+    "to": "Lugbe",
+    "price": 4200
+  },
+  {
+    "from": "Apo",
+    "to": "Maitama",
+    "price": 3900
+  },
+  {
+    "from": "Apo",
+    "to": "Mpape",
+    "price": 4000
+  },
+  {
+    "from": "Apo",
+    "to": "Nyanya",
+    "price": 3700
+  },
+  {
+    "from": "Apo",
+    "to": "Utako",
+    "price": 3700
+  },
+  {
+    "from": "Apo",
+    "to": "Wuse",
+    "price": 3600
+  },
+  {
+    "from": "Apo",
+    "to": "Wuse 2",
+    "price": 3700
+  },
+  {
+    "from": "Asokoro",
+    "to": "Airport Road",
+    "price": 4800
+  },
+  {
+    "from": "Asokoro",
+    "to": "Apo",
+    "price": 3500
+  },
+  {
+    "from": "Asokoro",
+    "to": "Central Area",
+    "price": 3400
+  },
+  {
+    "from": "Asokoro",
+    "to": "Dakwo",
+    "price": 4100
+  },
+  {
+    "from": "Asokoro",
+    "to": "Durumi",
+    "price": 3600
+  },
+  {
+    "from": "Asokoro",
+    "to": "Dutse",
+    "price": 4700
+  },
+  {
+    "from": "Asokoro",
+    "to": "Galadimawa",
+    "price": 4100
+  },
+  {
+    "from": "Asokoro",
+    "to": "Garki",
+    "price": 3300
+  },
+  {
+    "from": "Asokoro",
+    "to": "Gudu",
+    "price": 3800
+  },
+  {
+    "from": "Asokoro",
+    "to": "Gwarinpa",
+    "price": 4300
+  },
+  {
+    "from": "Asokoro",
+    "to": "Jabi",
+    "price": 4100
+  },
+  {
+    "from": "Asokoro",
+    "to": "Jahi",
+    "price": 4300
+  },
+  {
+    "from": "Asokoro",
+    "to": "Kado",
+    "price": 3900
+  },
+  {
+    "from": "Asokoro",
+    "to": "Karu",
+    "price": 3600
+  },
+  {
+    "from": "Asokoro",
+    "to": "Kubwa",
+    "price": 5100
+  },
+  {
+    "from": "Asokoro",
+    "to": "Kuje",
+    "price": 6100
+  },
+  {
+    "from": "Asokoro",
+    "to": "Lokogoma",
+    "price": 3800
+  },
+  {
+    "from": "Asokoro",
+    "to": "Lugbe",
+    "price": 4700
+  },
+  {
+    "from": "Asokoro",
+    "to": "Maitama",
+    "price": 3700
+  },
+  {
+    "from": "Asokoro",
+    "to": "Mpape",
+    "price": 3900
+  },
+  {
+    "from": "Asokoro",
+    "to": "Nyanya",
+    "price": 3400
+  },
+  {
+    "from": "Asokoro",
+    "to": "Utako",
+    "price": 3800
+  },
+  {
+    "from": "Asokoro",
+    "to": "Wuse",
+    "price": 3500
+  },
+  {
+    "from": "Asokoro",
+    "to": "Wuse 2",
+    "price": 3600
+  },
+  {
+    "from": "Central Area",
+    "to": "Airport Road",
+    "price": 4600
+  },
+  {
+    "from": "Central Area",
+    "to": "Apo",
+    "price": 3600
+  },
+  {
+    "from": "Central Area",
+    "to": "Asokoro",
+    "price": 3400
+  },
+  {
+    "from": "Central Area",
+    "to": "Dakwo",
+    "price": 3900
+  },
+  {
+    "from": "Central Area",
+    "to": "Durumi",
+    "price": 3200
+  },
+  {
+    "from": "Central Area",
+    "to": "Dutse",
+    "price": 4300
+  },
+  {
+    "from": "Central Area",
+    "to": "Galadimawa",
+    "price": 4000
+  },
+  {
+    "from": "Central Area",
+    "to": "Garki",
+    "price": 3200
+  },
+  {
+    "from": "Central Area",
+    "to": "Gudu",
+    "price": 3600
+  },
+  {
+    "from": "Central Area",
+    "to": "Gwarinpa",
+    "price": 3900
+  },
+  {
+    "from": "Central Area",
+    "to": "Jabi",
+    "price": 3700
+  },
+  {
+    "from": "Central Area",
+    "to": "Jahi",
+    "price": 3800
+  },
+  {
+    "from": "Central Area",
+    "to": "Kado",
+    "price": 3500
+  },
+  {
+    "from": "Central Area",
+    "to": "Karu",
+    "price": 4000
+  },
+  {
+    "from": "Central Area",
+    "to": "Kubwa",
+    "price": 4700
+  },
+  {
+    "from": "Central Area",
+    "to": "Kuje",
+    "price": 5900
+  },
+  {
+    "from": "Central Area",
+    "to": "Lokogoma",
+    "price": 3800
+  },
+  {
+    "from": "Central Area",
+    "to": "Lugbe",
+    "price": 4500
+  },
+  {
+    "from": "Central Area",
+    "to": "Maitama",
+    "price": 3300
+  },
+  {
+    "from": "Central Area",
+    "to": "Mpape",
+    "price": 3500
+  },
+  {
+    "from": "Central Area",
+    "to": "Nyanya",
+    "price": 3800
+  },
+  {
+    "from": "Central Area",
+    "to": "Utako",
+    "price": 3400
+  },
+  {
+    "from": "Central Area",
+    "to": "Wuse",
+    "price": 3100
+  },
+  {
+    "from": "Central Area",
+    "to": "Wuse 2",
+    "price": 3200
+  },
+  {
+    "from": "Dakwo",
+    "to": "Airport Road",
+    "price": 3700
+  },
+  {
+    "from": "Dakwo",
+    "to": "Apo",
+    "price": 3700
+  },
+  {
+    "from": "Dakwo",
+    "to": "Asokoro",
+    "price": 4100
+  },
+  {
+    "from": "Dakwo",
+    "to": "Central Area",
+    "price": 3900
+  },
+  {
+    "from": "Dakwo",
+    "to": "Durumi",
+    "price": 3700
+  },
+  {
+    "from": "Dakwo",
+    "to": "Dutse",
+    "price": 4400
+  },
+  {
+    "from": "Dakwo",
+    "to": "Galadimawa",
+    "price": 3200
+  },
+  {
+    "from": "Dakwo",
+    "to": "Garki",
+    "price": 3800
+  },
+  {
+    "from": "Dakwo",
+    "to": "Gudu",
+    "price": 3400
+  },
+  {
+    "from": "Dakwo",
+    "to": "Gwarinpa",
+    "price": 4100
+  },
+  {
+    "from": "Dakwo",
+    "to": "Jabi",
+    "price": 3800
+  },
+  {
+    "from": "Dakwo",
+    "to": "Jahi",
+    "price": 3900
+  },
+  {
+    "from": "Dakwo",
+    "to": "Kado",
+    "price": 4000
+  },
+  {
+    "from": "Dakwo",
+    "to": "Karu",
+    "price": 4600
+  },
+  {
+    "from": "Dakwo",
+    "to": "Kubwa",
+    "price": 4700
+  },
+  {
+    "from": "Dakwo",
+    "to": "Kuje",
+    "price": 5000
+  },
+  {
+    "from": "Dakwo",
+    "to": "Lokogoma",
+    "price": 3400
+  },
+  {
+    "from": "Dakwo",
+    "to": "Lugbe",
+    "price": 3600
+  },
+  {
+    "from": "Dakwo",
+    "to": "Maitama",
+    "price": 4200
+  },
+  {
+    "from": "Dakwo",
+    "to": "Mpape",
+    "price": 4200
+  },
+  {
+    "from": "Dakwo",
+    "to": "Nyanya",
+    "price": 4300
+  },
+  {
+    "from": "Dakwo",
+    "to": "Utako",
+    "price": 3800
+  },
+  {
+    "from": "Dakwo",
+    "to": "Wuse",
+    "price": 3900
+  },
+  {
+    "from": "Dakwo",
+    "to": "Wuse 2",
+    "price": 3900
+  },
+  {
+    "from": "Durumi",
+    "to": "Airport Road",
+    "price": 4400
+  },
+  {
+    "from": "Durumi",
+    "to": "Apo",
+    "price": 3500
+  },
+  {
+    "from": "Durumi",
+    "to": "Asokoro",
+    "price": 3600
+  },
+  {
+    "from": "Durumi",
+    "to": "Central Area",
+    "price": 3200
+  },
+  {
+    "from": "Durumi",
+    "to": "Dakwo",
+    "price": 3700
+  },
+  {
+    "from": "Durumi",
+    "to": "Dutse",
+    "price": 4200
+  },
+  {
+    "from": "Durumi",
+    "to": "Galadimawa",
+    "price": 3800
+  },
+  {
+    "from": "Durumi",
+    "to": "Garki",
+    "price": 3200
+  },
+  {
+    "from": "Durumi",
+    "to": "Gudu",
+    "price": 3300
+  },
+  {
+    "from": "Durumi",
+    "to": "Gwarinpa",
+    "price": 3800
+  },
+  {
+    "from": "Durumi",
+    "to": "Jabi",
+    "price": 3600
+  },
+  {
+    "from": "Durumi",
+    "to": "Jahi",
+    "price": 3700
+  },
+  {
+    "from": "Durumi",
+    "to": "Kado",
+    "price": 3500
+  },
+  {
+    "from": "Durumi",
+    "to": "Karu",
+    "price": 4200
+  },
+  {
+    "from": "Durumi",
+    "to": "Kubwa",
+    "price": 4600
+  },
+  {
+    "from": "Durumi",
+    "to": "Kuje",
+    "price": 5700
+  },
+  {
+    "from": "Durumi",
+    "to": "Lokogoma",
+    "price": 3600
+  },
+  {
+    "from": "Durumi",
+    "to": "Lugbe",
+    "price": 4300
+  },
+  {
+    "from": "Durumi",
+    "to": "Maitama",
+    "price": 3500
+  },
+  {
+    "from": "Durumi",
+    "to": "Mpape",
+    "price": 3600
+  },
+  {
+    "from": "Durumi",
+    "to": "Nyanya",
+    "price": 3900
+  },
+  {
+    "from": "Durumi",
+    "to": "Utako",
+    "price": 3300
+  },
+  {
+    "from": "Durumi",
+    "to": "Wuse",
+    "price": 3200
+  },
+  {
+    "from": "Durumi",
+    "to": "Wuse 2",
+    "price": 3200
+  },
+  {
+    "from": "Dutse",
+    "to": "Airport Road",
+    "price": 4700
+  },
+  {
+    "from": "Dutse",
+    "to": "Apo",
+    "price": 4700
+  },
+  {
+    "from": "Dutse",
+    "to": "Asokoro",
+    "price": 4700
+  },
+  {
+    "from": "Dutse",
+    "to": "Central Area",
+    "price": 4300
+  },
+  {
+    "from": "Dutse",
+    "to": "Dakwo",
+    "price": 4400
+  },
+  {
+    "from": "Dutse",
+    "to": "Durumi",
+    "price": 4200
+  },
+  {
+    "from": "Dutse",
+    "to": "Galadimawa",
+    "price": 4600
+  },
+  {
+    "from": "Dutse",
+    "to": "Garki",
+    "price": 4500
+  },
+  {
+    "from": "Dutse",
+    "to": "Gudu",
+    "price": 4300
+  },
+  {
+    "from": "Dutse",
+    "to": "Gwarinpa",
+    "price": 3500
+  },
+  {
+    "from": "Dutse",
+    "to": "Jabi",
+    "price": 3700
+  },
+  {
+    "from": "Dutse",
+    "to": "Jahi",
+    "price": 3500
+  },
+  {
+    "from": "Dutse",
+    "to": "Kado",
+    "price": 3800
+  },
+  {
+    "from": "Dutse",
+    "to": "Karu",
+    "price": 5300
+  },
+  {
+    "from": "Dutse",
+    "to": "Kubwa",
+    "price": 3400
+  },
+  {
+    "from": "Dutse",
+    "to": "Kuje",
+    "price": 5700
+  },
+  {
+    "from": "Dutse",
+    "to": "Lokogoma",
+    "price": 4700
+  },
+  {
+    "from": "Dutse",
+    "to": "Lugbe",
+    "price": 4800
+  },
+  {
+    "from": "Dutse",
+    "to": "Maitama",
+    "price": 4200
+  },
+  {
+    "from": "Dutse",
+    "to": "Mpape",
+    "price": 4000
+  },
+  {
+    "from": "Dutse",
+    "to": "Nyanya",
+    "price": 5100
+  },
+  {
+    "from": "Dutse",
+    "to": "Utako",
+    "price": 3900
+  },
+  {
+    "from": "Dutse",
+    "to": "Wuse",
+    "price": 4200
+  },
+  {
+    "from": "Dutse",
+    "to": "Wuse 2",
+    "price": 4100
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Airport Road",
+    "price": 3700
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Apo",
+    "price": 3600
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Asokoro",
+    "price": 4100
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Central Area",
+    "price": 4000
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Dakwo",
+    "price": 3200
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Durumi",
+    "price": 3800
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Dutse",
+    "price": 4600
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Garki",
+    "price": 3800
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Gudu",
+    "price": 3400
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Gwarinpa",
+    "price": 4200
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Jabi",
+    "price": 3900
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Jahi",
+    "price": 4100
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Kado",
+    "price": 4100
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Karu",
+    "price": 4600
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Kubwa",
+    "price": 4800
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Kuje",
+    "price": 5000
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Lokogoma",
+    "price": 3300
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Lugbe",
+    "price": 3600
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Maitama",
+    "price": 4300
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Mpape",
+    "price": 4300
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Nyanya",
+    "price": 4300
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Utako",
+    "price": 3900
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Wuse",
+    "price": 4000
+  },
+  {
+    "from": "Galadimawa",
+    "to": "Wuse 2",
+    "price": 4000
+  },
+  {
+    "from": "Garki",
+    "to": "Airport Road",
+    "price": 4500
+  },
+  {
+    "from": "Garki",
+    "to": "Apo",
+    "price": 3300
+  },
+  {
+    "from": "Garki",
+    "to": "Asokoro",
+    "price": 3300
+  },
+  {
+    "from": "Garki",
+    "to": "Central Area",
+    "price": 3200
+  },
+  {
+    "from": "Garki",
+    "to": "Dakwo",
+    "price": 3800
+  },
+  {
+    "from": "Garki",
+    "to": "Durumi",
+    "price": 3200
+  },
+  {
+    "from": "Garki",
+    "to": "Dutse",
+    "price": 4500
+  },
+  {
+    "from": "Garki",
+    "to": "Galadimawa",
+    "price": 3800
+  },
+  {
+    "from": "Garki",
+    "to": "Gudu",
+    "price": 3400
+  },
+  {
+    "from": "Garki",
+    "to": "Gwarinpa",
+    "price": 4000
+  },
+  {
+    "from": "Garki",
+    "to": "Jabi",
+    "price": 3800
+  },
+  {
+    "from": "Garki",
+    "to": "Jahi",
+    "price": 3900
+  },
+  {
+    "from": "Garki",
+    "to": "Kado",
+    "price": 3700
+  },
+  {
+    "from": "Garki",
+    "to": "Karu",
+    "price": 4000
+  },
+  {
+    "from": "Garki",
+    "to": "Kubwa",
+    "price": 4800
+  },
+  {
+    "from": "Garki",
+    "to": "Kuje",
+    "price": 5800
+  },
+  {
+    "from": "Garki",
+    "to": "Lokogoma",
+    "price": 3600
+  },
+  {
+    "from": "Garki",
+    "to": "Lugbe",
+    "price": 4400
+  },
+  {
+    "from": "Garki",
+    "to": "Maitama",
+    "price": 3600
+  },
+  {
+    "from": "Garki",
+    "to": "Mpape",
+    "price": 3700
+  },
+  {
+    "from": "Garki",
+    "to": "Nyanya",
+    "price": 3700
+  },
+  {
+    "from": "Garki",
+    "to": "Utako",
+    "price": 3500
+  },
+  {
+    "from": "Garki",
+    "to": "Wuse",
+    "price": 3300
+  },
+  {
+    "from": "Garki",
+    "to": "Wuse 2",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Airport Road",
+    "price": 4100
+  },
+  {
+    "from": "Gudu",
+    "to": "Apo",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Asokoro",
+    "price": 3800
+  },
+  {
+    "from": "Gudu",
+    "to": "Central Area",
+    "price": 3600
+  },
+  {
+    "from": "Gudu",
+    "to": "Dakwo",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Durumi",
+    "price": 3300
+  },
+  {
+    "from": "Gudu",
+    "to": "Dutse",
+    "price": 4300
+  },
+  {
+    "from": "Gudu",
+    "to": "Galadimawa",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Garki",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Gwarinpa",
+    "price": 3900
+  },
+  {
+    "from": "Gudu",
+    "to": "Jabi",
+    "price": 3600
+  },
+  {
+    "from": "Gudu",
+    "to": "Jahi",
+    "price": 3700
+  },
+  {
+    "from": "Gudu",
+    "to": "Kado",
+    "price": 3700
+  },
+  {
+    "from": "Gudu",
+    "to": "Karu",
+    "price": 4300
+  },
+  {
+    "from": "Gudu",
+    "to": "Kubwa",
+    "price": 4600
+  },
+  {
+    "from": "Gudu",
+    "to": "Kuje",
+    "price": 5400
+  },
+  {
+    "from": "Gudu",
+    "to": "Lokogoma",
+    "price": 3400
+  },
+  {
+    "from": "Gudu",
+    "to": "Lugbe",
+    "price": 4000
+  },
+  {
+    "from": "Gudu",
+    "to": "Maitama",
+    "price": 3800
+  },
+  {
+    "from": "Gudu",
+    "to": "Mpape",
+    "price": 3800
+  },
+  {
+    "from": "Gudu",
+    "to": "Nyanya",
+    "price": 4100
+  },
+  {
+    "from": "Gudu",
+    "to": "Utako",
+    "price": 3500
+  },
+  {
+    "from": "Gudu",
+    "to": "Wuse",
+    "price": 3500
+  },
+  {
+    "from": "Gudu",
+    "to": "Wuse 2",
+    "price": 3500
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Airport Road",
+    "price": 4600
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Apo",
+    "price": 4200
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Asokoro",
+    "price": 4300
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Central Area",
+    "price": 3900
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Dakwo",
+    "price": 4100
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Durumi",
+    "price": 3800
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Dutse",
+    "price": 3500
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Galadimawa",
+    "price": 4200
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Garki",
+    "price": 4000
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Gudu",
+    "price": 3900
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Jabi",
+    "price": 3300
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Jahi",
+    "price": 3200
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Kado",
+    "price": 3300
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Karu",
+    "price": 4900
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Kubwa",
+    "price": 3800
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Kuje",
+    "price": 5700
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Lokogoma",
+    "price": 4300
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Lugbe",
+    "price": 4600
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Maitama",
+    "price": 3700
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Mpape",
+    "price": 3500
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Nyanya",
+    "price": 4600
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Utako",
+    "price": 3500
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Wuse",
+    "price": 3700
+  },
+  {
+    "from": "Gwarinpa",
+    "to": "Wuse 2",
+    "price": 3700
+  },
+  {
+    "from": "Jabi",
+    "to": "Airport Road",
+    "price": 4300
+  },
+  {
+    "from": "Jabi",
+    "to": "Apo",
+    "price": 4000
+  },
+  {
+    "from": "Jabi",
+    "to": "Asokoro",
+    "price": 4100
+  },
+  {
+    "from": "Jabi",
+    "to": "Central Area",
+    "price": 3700
+  },
+  {
+    "from": "Jabi",
+    "to": "Dakwo",
+    "price": 3800
+  },
+  {
+    "from": "Jabi",
+    "to": "Durumi",
+    "price": 3600
+  },
+  {
+    "from": "Jabi",
+    "to": "Dutse",
+    "price": 3700
+  },
+  {
+    "from": "Jabi",
+    "to": "Galadimawa",
+    "price": 3900
+  },
+  {
+    "from": "Jabi",
+    "to": "Garki",
+    "price": 3800
+  },
+  {
+    "from": "Jabi",
+    "to": "Gudu",
+    "price": 3600
+  },
+  {
+    "from": "Jabi",
+    "to": "Gwarinpa",
+    "price": 3300
+  },
+  {
+    "from": "Jabi",
+    "to": "Jahi",
+    "price": 3200
+  },
+  {
+    "from": "Jabi",
+    "to": "Kado",
+    "price": 3300
+  },
+  {
+    "from": "Jabi",
+    "to": "Karu",
+    "price": 4700
+  },
+  {
+    "from": "Jabi",
+    "to": "Kubwa",
+    "price": 4000
+  },
+  {
+    "from": "Jabi",
+    "to": "Kuje",
+    "price": 5500
+  },
+  {
+    "from": "Jabi",
+    "to": "Lokogoma",
+    "price": 4000
+  },
+  {
+    "from": "Jabi",
+    "to": "Lugbe",
+    "price": 4300
+  },
+  {
+    "from": "Jabi",
+    "to": "Maitama",
+    "price": 3700
+  },
+  {
+    "from": "Jabi",
+    "to": "Mpape",
+    "price": 3600
+  },
+  {
+    "from": "Jabi",
+    "to": "Nyanya",
+    "price": 4400
+  },
+  {
+    "from": "Jabi",
+    "to": "Utako",
+    "price": 3300
+  },
+  {
+    "from": "Jabi",
+    "to": "Wuse",
+    "price": 3600
+  },
+  {
+    "from": "Jabi",
+    "to": "Wuse 2",
+    "price": 3500
+  },
+  {
+    "from": "Jahi",
+    "to": "Airport Road",
+    "price": 4400
+  },
+  {
+    "from": "Jahi",
+    "to": "Apo",
+    "price": 4100
+  },
+  {
+    "from": "Jahi",
+    "to": "Asokoro",
+    "price": 4300
+  },
+  {
+    "from": "Jahi",
+    "to": "Central Area",
+    "price": 3800
+  },
+  {
+    "from": "Jahi",
+    "to": "Dakwo",
+    "price": 3900
+  },
+  {
+    "from": "Jahi",
+    "to": "Durumi",
+    "price": 3700
+  },
+  {
+    "from": "Jahi",
+    "to": "Dutse",
+    "price": 3500
+  },
+  {
+    "from": "Jahi",
+    "to": "Galadimawa",
+    "price": 4100
+  },
+  {
+    "from": "Jahi",
+    "to": "Garki",
+    "price": 3900
+  },
+  {
+    "from": "Jahi",
+    "to": "Gudu",
+    "price": 3700
+  },
+  {
+    "from": "Jahi",
+    "to": "Gwarinpa",
+    "price": 3200
+  },
+  {
+    "from": "Jahi",
+    "to": "Jabi",
+    "price": 3200
+  },
+  {
+    "from": "Jahi",
+    "to": "Kado",
+    "price": 3400
+  },
+  {
+    "from": "Jahi",
+    "to": "Karu",
+    "price": 4900
+  },
+  {
+    "from": "Jahi",
+    "to": "Kubwa",
+    "price": 3900
+  },
+  {
+    "from": "Jahi",
+    "to": "Kuje",
+    "price": 5500
+  },
+  {
+    "from": "Jahi",
+    "to": "Lokogoma",
+    "price": 4100
+  },
+  {
+    "from": "Jahi",
+    "to": "Lugbe",
+    "price": 4400
+  },
+  {
+    "from": "Jahi",
+    "to": "Maitama",
+    "price": 3800
+  },
+  {
+    "from": "Jahi",
+    "to": "Mpape",
+    "price": 3600
+  },
+  {
+    "from": "Jahi",
+    "to": "Nyanya",
+    "price": 4600
+  },
+  {
+    "from": "Jahi",
+    "to": "Utako",
+    "price": 3400
+  },
+  {
+    "from": "Jahi",
+    "to": "Wuse",
+    "price": 3700
+  },
+  {
+    "from": "Jahi",
+    "to": "Wuse 2",
+    "price": 3700
+  },
+  {
+    "from": "Kado",
+    "to": "Airport Road",
+    "price": 4600
+  },
+  {
+    "from": "Kado",
+    "to": "Apo",
+    "price": 4000
+  },
+  {
+    "from": "Kado",
+    "to": "Asokoro",
+    "price": 3900
+  },
+  {
+    "from": "Kado",
+    "to": "Central Area",
+    "price": 3500
+  },
+  {
+    "from": "Kado",
+    "to": "Dakwo",
+    "price": 4000
+  },
+  {
+    "from": "Kado",
+    "to": "Durumi",
+    "price": 3500
+  },
+  {
+    "from": "Kado",
+    "to": "Dutse",
+    "price": 3800
+  },
+  {
+    "from": "Kado",
+    "to": "Galadimawa",
+    "price": 4100
+  },
+  {
+    "from": "Kado",
+    "to": "Garki",
+    "price": 3700
+  },
+  {
+    "from": "Kado",
+    "to": "Gudu",
+    "price": 3700
+  },
+  {
+    "from": "Kado",
+    "to": "Gwarinpa",
+    "price": 3300
+  },
+  {
+    "from": "Kado",
+    "to": "Jabi",
+    "price": 3300
+  },
+  {
+    "from": "Kado",
+    "to": "Jahi",
+    "price": 3400
+  },
+  {
+    "from": "Kado",
+    "to": "Karu",
+    "price": 4600
+  },
+  {
+    "from": "Kado",
+    "to": "Kubwa",
+    "price": 4100
+  },
+  {
+    "from": "Kado",
+    "to": "Kuje",
+    "price": 5800
+  },
+  {
+    "from": "Kado",
+    "to": "Lokogoma",
+    "price": 4100
+  },
+  {
+    "from": "Kado",
+    "to": "Lugbe",
+    "price": 4600
+  },
+  {
+    "from": "Kado",
+    "to": "Maitama",
+    "price": 3400
+  },
+  {
+    "from": "Kado",
+    "to": "Mpape",
+    "price": 3300
+  },
+  {
+    "from": "Kado",
+    "to": "Nyanya",
+    "price": 4300
+  },
+  {
+    "from": "Kado",
+    "to": "Utako",
+    "price": 3200
+  },
+  {
+    "from": "Kado",
+    "to": "Wuse",
+    "price": 3400
+  },
+  {
+    "from": "Kado",
+    "to": "Wuse 2",
+    "price": 3300
+  },
+  {
+    "from": "Karu",
+    "to": "Airport Road",
+    "price": 5300
+  },
+  {
+    "from": "Karu",
+    "to": "Apo",
+    "price": 4000
+  },
+  {
+    "from": "Karu",
+    "to": "Asokoro",
+    "price": 3600
+  },
+  {
+    "from": "Karu",
+    "to": "Central Area",
+    "price": 4000
+  },
+  {
+    "from": "Karu",
+    "to": "Dakwo",
+    "price": 4600
+  },
+  {
+    "from": "Karu",
+    "to": "Durumi",
+    "price": 4200
+  },
+  {
+    "from": "Karu",
+    "to": "Dutse",
+    "price": 5300
+  },
+  {
+    "from": "Karu",
+    "to": "Galadimawa",
+    "price": 4600
+  },
+  {
+    "from": "Karu",
+    "to": "Garki",
+    "price": 4000
+  },
+  {
+    "from": "Karu",
+    "to": "Gudu",
+    "price": 4300
+  },
+  {
+    "from": "Karu",
+    "to": "Gwarinpa",
+    "price": 4900
+  },
+  {
+    "from": "Karu",
+    "to": "Jabi",
+    "price": 4700
+  },
+  {
+    "from": "Karu",
+    "to": "Jahi",
+    "price": 4900
+  },
+  {
+    "from": "Karu",
+    "to": "Kado",
+    "price": 4600
+  },
+  {
+    "from": "Karu",
+    "to": "Kubwa",
+    "price": 5700
+  },
+  {
+    "from": "Karu",
+    "to": "Kuje",
+    "price": 6600
+  },
+  {
+    "from": "Karu",
+    "to": "Lokogoma",
+    "price": 4200
+  },
+  {
+    "from": "Karu",
+    "to": "Lugbe",
+    "price": 5100
+  },
+  {
+    "from": "Karu",
+    "to": "Maitama",
+    "price": 4200
+  },
+  {
+    "from": "Karu",
+    "to": "Mpape",
+    "price": 4400
+  },
+  {
+    "from": "Karu",
+    "to": "Nyanya",
+    "price": 3300
+  },
+  {
+    "from": "Karu",
+    "to": "Utako",
+    "price": 4400
+  },
+  {
+    "from": "Karu",
+    "to": "Wuse",
+    "price": 4200
+  },
+  {
+    "from": "Karu",
+    "to": "Wuse 2",
+    "price": 4200
+  },
+  {
+    "from": "Kubwa",
+    "to": "Airport Road",
+    "price": 4900
+  },
+  {
+    "from": "Kubwa",
+    "to": "Apo",
+    "price": 5000
+  },
+  {
+    "from": "Kubwa",
+    "to": "Asokoro",
+    "price": 5100
+  },
+  {
+    "from": "Kubwa",
+    "to": "Central Area",
+    "price": 4700
+  },
+  {
+    "from": "Kubwa",
+    "to": "Dakwo",
+    "price": 4700
+  },
+  {
+    "from": "Kubwa",
+    "to": "Durumi",
+    "price": 4600
+  },
+  {
+    "from": "Kubwa",
+    "to": "Dutse",
+    "price": 3400
+  },
+  {
+    "from": "Kubwa",
+    "to": "Galadimawa",
+    "price": 4800
+  },
+  {
+    "from": "Kubwa",
+    "to": "Garki",
+    "price": 4800
+  },
+  {
+    "from": "Kubwa",
+    "to": "Gudu",
+    "price": 4600
+  },
+  {
+    "from": "Kubwa",
+    "to": "Gwarinpa",
+    "price": 3800
+  },
+  {
+    "from": "Kubwa",
+    "to": "Jabi",
+    "price": 4000
+  },
+  {
+    "from": "Kubwa",
+    "to": "Jahi",
+    "price": 3900
+  },
+  {
+    "from": "Kubwa",
+    "to": "Kado",
+    "price": 4100
+  },
+  {
+    "from": "Kubwa",
+    "to": "Karu",
+    "price": 5700
+  },
+  {
+    "from": "Kubwa",
+    "to": "Kuje",
+    "price": 5700
+  },
+  {
+    "from": "Kubwa",
+    "to": "Lokogoma",
+    "price": 5000
+  },
+  {
+    "from": "Kubwa",
+    "to": "Lugbe",
+    "price": 4900
+  },
+  {
+    "from": "Kubwa",
+    "to": "Maitama",
+    "price": 4500
+  },
+  {
+    "from": "Kubwa",
+    "to": "Mpape",
+    "price": 4300
+  },
+  {
+    "from": "Kubwa",
+    "to": "Nyanya",
+    "price": 5400
+  },
+  {
+    "from": "Kubwa",
+    "to": "Utako",
+    "price": 4300
+  },
+  {
+    "from": "Kubwa",
+    "to": "Wuse",
+    "price": 4500
+  },
+  {
+    "from": "Kubwa",
+    "to": "Wuse 2",
+    "price": 4500
+  },
+  {
+    "from": "Kuje",
+    "to": "Airport Road",
+    "price": 4300
+  },
+  {
+    "from": "Kuje",
+    "to": "Apo",
+    "price": 5600
+  },
+  {
+    "from": "Kuje",
+    "to": "Asokoro",
+    "price": 6100
+  },
+  {
+    "from": "Kuje",
+    "to": "Central Area",
+    "price": 5900
+  },
+  {
+    "from": "Kuje",
+    "to": "Dakwo",
+    "price": 5000
+  },
+  {
+    "from": "Kuje",
+    "to": "Durumi",
+    "price": 5700
+  },
+  {
+    "from": "Kuje",
+    "to": "Dutse",
+    "price": 5700
+  },
+  {
+    "from": "Kuje",
+    "to": "Galadimawa",
+    "price": 5000
+  },
+  {
+    "from": "Kuje",
+    "to": "Garki",
+    "price": 5800
+  },
+  {
+    "from": "Kuje",
+    "to": "Gudu",
+    "price": 5400
+  },
+  {
+    "from": "Kuje",
+    "to": "Gwarinpa",
+    "price": 5700
+  },
+  {
+    "from": "Kuje",
+    "to": "Jabi",
+    "price": 5500
+  },
+  {
+    "from": "Kuje",
+    "to": "Jahi",
+    "price": 5500
+  },
+  {
+    "from": "Kuje",
+    "to": "Kado",
+    "price": 5800
+  },
+  {
+    "from": "Kuje",
+    "to": "Karu",
+    "price": 6600
+  },
+  {
+    "from": "Kuje",
+    "to": "Kubwa",
+    "price": 5700
+  },
+  {
+    "from": "Kuje",
+    "to": "Lokogoma",
+    "price": 5400
+  },
+  {
+    "from": "Kuje",
+    "to": "Lugbe",
+    "price": 4400
+  },
+  {
+    "from": "Kuje",
+    "to": "Maitama",
+    "price": 6100
+  },
+  {
+    "from": "Kuje",
+    "to": "Mpape",
+    "price": 6100
+  },
+  {
+    "from": "Kuje",
+    "to": "Nyanya",
+    "price": 6300
+  },
+  {
+    "from": "Kuje",
+    "to": "Utako",
+    "price": 5700
+  },
+  {
+    "from": "Kuje",
+    "to": "Wuse",
+    "price": 5900
+  },
+  {
+    "from": "Kuje",
+    "to": "Wuse 2",
+    "price": 5900
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Airport Road",
+    "price": 4100
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Apo",
+    "price": 3300
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Asokoro",
+    "price": 3800
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Central Area",
+    "price": 3800
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Dakwo",
+    "price": 3400
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Durumi",
+    "price": 3600
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Dutse",
+    "price": 4700
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Galadimawa",
+    "price": 3300
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Garki",
+    "price": 3600
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Gudu",
+    "price": 3400
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Gwarinpa",
+    "price": 4300
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Jabi",
+    "price": 4000
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Jahi",
+    "price": 4100
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Kado",
+    "price": 4100
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Karu",
+    "price": 4200
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Kubwa",
+    "price": 5000
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Kuje",
+    "price": 5400
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Lugbe",
+    "price": 3900
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Maitama",
+    "price": 4100
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Mpape",
+    "price": 4200
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Nyanya",
+    "price": 3900
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Utako",
+    "price": 3800
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Wuse",
+    "price": 3800
+  },
+  {
+    "from": "Lokogoma",
+    "to": "Wuse 2",
+    "price": 3800
+  },
+  {
+    "from": "Lugbe",
+    "to": "Airport Road",
+    "price": 3200
+  },
+  {
+    "from": "Lugbe",
+    "to": "Apo",
+    "price": 4200
+  },
+  {
+    "from": "Lugbe",
+    "to": "Asokoro",
+    "price": 4700
+  },
+  {
+    "from": "Lugbe",
+    "to": "Central Area",
+    "price": 4500
+  },
+  {
+    "from": "Lugbe",
+    "to": "Dakwo",
+    "price": 3600
+  },
+  {
+    "from": "Lugbe",
+    "to": "Durumi",
+    "price": 4300
+  },
+  {
+    "from": "Lugbe",
+    "to": "Dutse",
+    "price": 4800
+  },
+  {
+    "from": "Lugbe",
+    "to": "Galadimawa",
+    "price": 3600
+  },
+  {
+    "from": "Lugbe",
+    "to": "Garki",
+    "price": 4400
+  },
+  {
+    "from": "Lugbe",
+    "to": "Gudu",
+    "price": 4000
+  },
+  {
+    "from": "Lugbe",
+    "to": "Gwarinpa",
+    "price": 4600
+  },
+  {
+    "from": "Lugbe",
+    "to": "Jabi",
+    "price": 4300
+  },
+  {
+    "from": "Lugbe",
+    "to": "Jahi",
+    "price": 4400
+  },
+  {
+    "from": "Lugbe",
+    "to": "Kado",
+    "price": 4600
+  },
+  {
+    "from": "Lugbe",
+    "to": "Karu",
+    "price": 5100
+  },
+  {
+    "from": "Lugbe",
+    "to": "Kubwa",
+    "price": 4900
+  },
+  {
+    "from": "Lugbe",
+    "to": "Kuje",
+    "price": 4400
+  },
+  {
+    "from": "Lugbe",
+    "to": "Lokogoma",
+    "price": 3900
+  },
+  {
+    "from": "Lugbe",
+    "to": "Maitama",
+    "price": 4800
+  },
+  {
+    "from": "Lugbe",
+    "to": "Mpape",
+    "price": 4800
+  },
+  {
+    "from": "Lugbe",
+    "to": "Nyanya",
+    "price": 4900
+  },
+  {
+    "from": "Lugbe",
+    "to": "Utako",
+    "price": 4400
+  },
+  {
+    "from": "Lugbe",
+    "to": "Wuse",
+    "price": 4500
+  },
+  {
+    "from": "Lugbe",
+    "to": "Wuse 2",
+    "price": 4500
+  },
+  {
+    "from": "Maitama",
+    "to": "Airport Road",
+    "price": 4900
+  },
+  {
+    "from": "Maitama",
+    "to": "Apo",
+    "price": 3900
+  },
+  {
+    "from": "Maitama",
+    "to": "Asokoro",
+    "price": 3700
+  },
+  {
+    "from": "Maitama",
+    "to": "Central Area",
+    "price": 3300
+  },
+  {
+    "from": "Maitama",
+    "to": "Dakwo",
+    "price": 4200
+  },
+  {
+    "from": "Maitama",
+    "to": "Durumi",
+    "price": 3500
+  },
+  {
+    "from": "Maitama",
+    "to": "Dutse",
+    "price": 4200
+  },
+  {
+    "from": "Maitama",
+    "to": "Galadimawa",
+    "price": 4300
+  },
+  {
+    "from": "Maitama",
+    "to": "Garki",
+    "price": 3600
+  },
+  {
+    "from": "Maitama",
+    "to": "Gudu",
+    "price": 3800
+  },
+  {
+    "from": "Maitama",
+    "to": "Gwarinpa",
+    "price": 3700
+  },
+  {
+    "from": "Maitama",
+    "to": "Jabi",
+    "price": 3700
+  },
+  {
+    "from": "Maitama",
+    "to": "Jahi",
+    "price": 3800
+  },
+  {
+    "from": "Maitama",
+    "to": "Kado",
+    "price": 3400
+  },
+  {
+    "from": "Maitama",
+    "to": "Karu",
+    "price": 4200
+  },
+  {
+    "from": "Maitama",
+    "to": "Kubwa",
+    "price": 4500
+  },
+  {
+    "from": "Maitama",
+    "to": "Kuje",
+    "price": 6100
+  },
+  {
+    "from": "Maitama",
+    "to": "Lokogoma",
+    "price": 4100
+  },
+  {
+    "from": "Maitama",
+    "to": "Lugbe",
+    "price": 4800
+  },
+  {
+    "from": "Maitama",
+    "to": "Mpape",
+    "price": 3200
+  },
+  {
+    "from": "Maitama",
+    "to": "Nyanya",
+    "price": 4000
+  },
+  {
+    "from": "Maitama",
+    "to": "Utako",
+    "price": 3500
+  },
+  {
+    "from": "Maitama",
+    "to": "Wuse",
+    "price": 3300
+  },
+  {
+    "from": "Maitama",
+    "to": "Wuse 2",
+    "price": 3300
+  },
+  {
+    "from": "Mpape",
+    "to": "Airport Road",
+    "price": 4800
+  },
+  {
+    "from": "Mpape",
+    "to": "Apo",
+    "price": 4000
+  },
+  {
+    "from": "Mpape",
+    "to": "Asokoro",
+    "price": 3900
+  },
+  {
+    "from": "Mpape",
+    "to": "Central Area",
+    "price": 3500
+  },
+  {
+    "from": "Mpape",
+    "to": "Dakwo",
+    "price": 4200
+  },
+  {
+    "from": "Mpape",
+    "to": "Durumi",
+    "price": 3600
+  },
+  {
+    "from": "Mpape",
+    "to": "Dutse",
+    "price": 4000
+  },
+  {
+    "from": "Mpape",
+    "to": "Galadimawa",
+    "price": 4300
+  },
+  {
+    "from": "Mpape",
+    "to": "Garki",
+    "price": 3700
+  },
+  {
+    "from": "Mpape",
+    "to": "Gudu",
+    "price": 3800
+  },
+  {
+    "from": "Mpape",
+    "to": "Gwarinpa",
+    "price": 3500
+  },
+  {
+    "from": "Mpape",
+    "to": "Jabi",
+    "price": 3600
+  },
+  {
+    "from": "Mpape",
+    "to": "Jahi",
+    "price": 3600
+  },
+  {
+    "from": "Mpape",
+    "to": "Kado",
+    "price": 3300
+  },
+  {
+    "from": "Mpape",
+    "to": "Karu",
+    "price": 4400
+  },
+  {
+    "from": "Mpape",
+    "to": "Kubwa",
+    "price": 4300
+  },
+  {
+    "from": "Mpape",
+    "to": "Kuje",
+    "price": 6100
+  },
+  {
+    "from": "Mpape",
+    "to": "Lokogoma",
+    "price": 4200
+  },
+  {
+    "from": "Mpape",
+    "to": "Lugbe",
+    "price": 4800
+  },
+  {
+    "from": "Mpape",
+    "to": "Maitama",
+    "price": 3200
+  },
+  {
+    "from": "Mpape",
+    "to": "Nyanya",
+    "price": 4200
+  },
+  {
+    "from": "Mpape",
+    "to": "Utako",
+    "price": 3400
+  },
+  {
+    "from": "Mpape",
+    "to": "Wuse",
+    "price": 3400
+  },
+  {
+    "from": "Mpape",
+    "to": "Wuse 2",
+    "price": 3300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Airport Road",
+    "price": 5000
+  },
+  {
+    "from": "Nyanya",
+    "to": "Apo",
+    "price": 3700
+  },
+  {
+    "from": "Nyanya",
+    "to": "Asokoro",
+    "price": 3400
+  },
+  {
+    "from": "Nyanya",
+    "to": "Central Area",
+    "price": 3800
+  },
+  {
+    "from": "Nyanya",
+    "to": "Dakwo",
+    "price": 4300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Durumi",
+    "price": 3900
+  },
+  {
+    "from": "Nyanya",
+    "to": "Dutse",
+    "price": 5100
+  },
+  {
+    "from": "Nyanya",
+    "to": "Galadimawa",
+    "price": 4300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Garki",
+    "price": 3700
+  },
+  {
+    "from": "Nyanya",
+    "to": "Gudu",
+    "price": 4100
+  },
+  {
+    "from": "Nyanya",
+    "to": "Gwarinpa",
+    "price": 4600
+  },
+  {
+    "from": "Nyanya",
+    "to": "Jabi",
+    "price": 4400
+  },
+  {
+    "from": "Nyanya",
+    "to": "Jahi",
+    "price": 4600
+  },
+  {
+    "from": "Nyanya",
+    "to": "Kado",
+    "price": 4300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Karu",
+    "price": 3300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Kubwa",
+    "price": 5400
+  },
+  {
+    "from": "Nyanya",
+    "to": "Kuje",
+    "price": 6300
+  },
+  {
+    "from": "Nyanya",
+    "to": "Lokogoma",
+    "price": 3900
+  },
+  {
+    "from": "Nyanya",
+    "to": "Lugbe",
+    "price": 4900
+  },
+  {
+    "from": "Nyanya",
+    "to": "Maitama",
+    "price": 4000
+  },
+  {
+    "from": "Nyanya",
+    "to": "Mpape",
+    "price": 4200
+  },
+  {
+    "from": "Nyanya",
+    "to": "Utako",
+    "price": 4200
+  },
+  {
+    "from": "Nyanya",
+    "to": "Wuse",
+    "price": 3900
+  },
+  {
+    "from": "Nyanya",
+    "to": "Wuse 2",
+    "price": 4000
+  },
+  {
+    "from": "Utako",
+    "to": "Airport Road",
+    "price": 4400
+  },
+  {
+    "from": "Utako",
+    "to": "Apo",
+    "price": 3700
+  },
+  {
+    "from": "Utako",
+    "to": "Asokoro",
+    "price": 3800
+  },
+  {
+    "from": "Utako",
+    "to": "Central Area",
+    "price": 3400
+  },
+  {
+    "from": "Utako",
+    "to": "Dakwo",
+    "price": 3800
+  },
+  {
+    "from": "Utako",
+    "to": "Durumi",
+    "price": 3300
+  },
+  {
+    "from": "Utako",
+    "to": "Dutse",
+    "price": 3900
+  },
+  {
+    "from": "Utako",
+    "to": "Galadimawa",
+    "price": 3900
+  },
+  {
+    "from": "Utako",
+    "to": "Garki",
+    "price": 3500
+  },
+  {
+    "from": "Utako",
+    "to": "Gudu",
+    "price": 3500
+  },
+  {
+    "from": "Utako",
+    "to": "Gwarinpa",
+    "price": 3500
+  },
+  {
+    "from": "Utako",
+    "to": "Jabi",
+    "price": 3300
+  },
+  {
+    "from": "Utako",
+    "to": "Jahi",
+    "price": 3400
+  },
+  {
+    "from": "Utako",
+    "to": "Kado",
+    "price": 3200
+  },
+  {
+    "from": "Utako",
+    "to": "Karu",
+    "price": 4400
+  },
+  {
+    "from": "Utako",
+    "to": "Kubwa",
+    "price": 4300
+  },
+  {
+    "from": "Utako",
+    "to": "Kuje",
+    "price": 5700
+  },
+  {
+    "from": "Utako",
+    "to": "Lokogoma",
+    "price": 3800
+  },
+  {
+    "from": "Utako",
+    "to": "Lugbe",
+    "price": 4400
+  },
+  {
+    "from": "Utako",
+    "to": "Maitama",
+    "price": 3500
+  },
+  {
+    "from": "Utako",
+    "to": "Mpape",
+    "price": 3400
+  },
+  {
+    "from": "Utako",
+    "to": "Nyanya",
+    "price": 4200
+  },
+  {
+    "from": "Utako",
+    "to": "Wuse",
+    "price": 3300
+  },
+  {
+    "from": "Utako",
+    "to": "Wuse 2",
+    "price": 3200
+  },
+  {
+    "from": "Wuse",
+    "to": "Airport Road",
+    "price": 4600
+  },
+  {
+    "from": "Wuse",
+    "to": "Apo",
+    "price": 3600
+  },
+  {
+    "from": "Wuse",
+    "to": "Asokoro",
+    "price": 3500
+  },
+  {
+    "from": "Wuse",
+    "to": "Central Area",
+    "price": 3100
+  },
+  {
+    "from": "Wuse",
+    "to": "Dakwo",
+    "price": 3900
+  },
+  {
+    "from": "Wuse",
+    "to": "Durumi",
+    "price": 3200
+  },
+  {
+    "from": "Wuse",
+    "to": "Dutse",
+    "price": 4200
+  },
+  {
+    "from": "Wuse",
+    "to": "Galadimawa",
+    "price": 4000
+  },
+  {
+    "from": "Wuse",
+    "to": "Garki",
+    "price": 3300
+  },
+  {
+    "from": "Wuse",
+    "to": "Gudu",
+    "price": 3500
+  },
+  {
+    "from": "Wuse",
+    "to": "Gwarinpa",
+    "price": 3700
+  },
+  {
+    "from": "Wuse",
+    "to": "Jabi",
+    "price": 3600
+  },
+  {
+    "from": "Wuse",
+    "to": "Jahi",
+    "price": 3700
+  },
+  {
+    "from": "Wuse",
+    "to": "Kado",
+    "price": 3400
+  },
+  {
+    "from": "Wuse",
+    "to": "Karu",
+    "price": 4200
+  },
+  {
+    "from": "Wuse",
+    "to": "Kubwa",
+    "price": 4500
+  },
+  {
+    "from": "Wuse",
+    "to": "Kuje",
+    "price": 5900
+  },
+  {
+    "from": "Wuse",
+    "to": "Lokogoma",
+    "price": 3800
+  },
+  {
+    "from": "Wuse",
+    "to": "Lugbe",
+    "price": 4500
+  },
+  {
+    "from": "Wuse",
+    "to": "Maitama",
+    "price": 3300
+  },
+  {
+    "from": "Wuse",
+    "to": "Mpape",
+    "price": 3400
+  },
+  {
+    "from": "Wuse",
+    "to": "Nyanya",
+    "price": 3900
+  },
+  {
+    "from": "Wuse",
+    "to": "Utako",
+    "price": 3300
+  },
+  {
+    "from": "Wuse",
+    "to": "Wuse 2",
+    "price": 3100
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Airport Road",
+    "price": 4600
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Apo",
+    "price": 3700
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Asokoro",
+    "price": 3600
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Central Area",
+    "price": 3200
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Dakwo",
+    "price": 3900
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Durumi",
+    "price": 3200
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Dutse",
+    "price": 4100
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Galadimawa",
+    "price": 4000
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Garki",
+    "price": 3400
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Gudu",
+    "price": 3500
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Gwarinpa",
+    "price": 3700
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Jabi",
+    "price": 3500
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Jahi",
+    "price": 3700
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Kado",
+    "price": 3300
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Karu",
+    "price": 4200
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Kubwa",
+    "price": 4500
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Kuje",
+    "price": 5900
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Lokogoma",
+    "price": 3800
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Lugbe",
+    "price": 4500
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Maitama",
+    "price": 3300
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Mpape",
+    "price": 3300
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Nyanya",
+    "price": 4000
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Utako",
+    "price": 3200
+  },
+  {
+    "from": "Wuse 2",
+    "to": "Wuse",
+    "price": 3100
+  }
+]

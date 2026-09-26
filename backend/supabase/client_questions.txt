@@ -1,0 +1,88 @@
+ZONE PRICING — QUESTIONS FOR CLIENT
+
+1) MISSING PAIRS (21) — no price given in either direction:
+   Asokoro <-> Kuje
+   Durumi <-> Airport Road
+   Durumi <-> Kuje
+   Galadimawa <-> Kuje
+   Garki <-> Airport Road
+   Garki <-> Kuje
+   Gwarinpa <-> Kuje
+   Jabi <-> Kuje
+   Jahi <-> Kuje
+   Kado <-> Kuje
+   Karu <-> Kuje
+   Kubwa <-> Gwarinpa
+   Kuje <-> Lugbe
+   Maitama <-> Airport Road
+   Maitama <-> Kubwa
+   Maitama <-> Kuje
+   Mpape <-> Kuje
+   Utako <-> Kuje
+   Wuse <-> Airport Road
+   Wuse <-> Kuje
+   Wuse <-> Maitama
+
+2) DIRECTIONAL MISMATCHES (58) — differ >15% by direction, please confirm which is correct or if it should be symmetric:
+   Garki -> Kubwa: N2500   |   Kubwa -> Garki: N5000   (50.0% difference)
+   Dutse -> Garki: N4600   |   Garki -> Dutse: N2500   (45.7% difference)
+   Garki -> Gwarinpa: N2500   |   Gwarinpa -> Garki: N4100   (39.0% difference)
+   Garki -> Lugbe: N2500   |   Lugbe -> Garki: N4100   (39.0% difference)
+   Dakwo -> Kuje: N4100   |   Kuje -> Dakwo: N6600   (37.9% difference)
+   Airport Road -> Utako: N5600   |   Utako -> Airport Road: N3500   (37.5% difference)
+   Garki -> Karu: N2500   |   Karu -> Garki: N3900   (35.9% difference)
+   Apo -> Kuje: N4200   |   Kuje -> Apo: N6500   (35.4% difference)
+   Gudu -> Kuje: N4200   |   Kuje -> Gudu: N6500   (35.4% difference)
+   Dakwo -> Garki: N3800   |   Garki -> Dakwo: N2500   (34.2% difference)
+   Garki -> Mpape: N2500   |   Mpape -> Garki: N3800   (34.2% difference)
+   Airport Road -> Jabi: N5600   |   Jabi -> Airport Road: N3700   (33.9% difference)
+   Airport Road -> Jahi: N5600   |   Jahi -> Airport Road: N3700   (33.9% difference)
+   Galadimawa -> Garki: N3700   |   Garki -> Galadimawa: N2500   (32.4% difference)
+   Garki -> Kado: N2500   |   Kado -> Garki: N3700   (32.4% difference)
+   Airport Road -> Kado: N5600   |   Kado -> Airport Road: N3800   (32.1% difference)
+   Asokoro -> Garki: N3600   |   Garki -> Asokoro: N2500   (30.6% difference)
+   Garki -> Jabi: N2500   |   Jabi -> Garki: N3600   (30.6% difference)
+   Garki -> Jahi: N2500   |   Jahi -> Garki: N3600   (30.6% difference)
+   Dutse -> Kuje: N4600   |   Kuje -> Dutse: N6600   (30.3% difference)
+   Airport Road -> Mpape: N5800   |   Mpape -> Airport Road: N4100   (29.3% difference)
+   Airport Road -> Galadimawa: N5600   |   Galadimawa -> Airport Road: N4000   (28.6% difference)
+   Apo -> Garki: N3500   |   Garki -> Apo: N2500   (28.6% difference)
+   Garki -> Maitama: N2500   |   Maitama -> Garki: N3500   (28.6% difference)
+   Garki -> Utako: N2500   |   Utako -> Garki: N3500   (28.6% difference)
+   Garki -> Wuse: N2500   |   Wuse -> Garki: N3500   (28.6% difference)
+   Kubwa -> Utako: N4900   |   Utako -> Kubwa: N3500   (28.6% difference)
+   Airport Road -> Dakwo: N5600   |   Dakwo -> Airport Road: N4100   (26.8% difference)
+   Garki -> Gudu: N2500   |   Gudu -> Garki: N3400   (26.5% difference)
+   Kubwa -> Wuse: N5000   |   Wuse -> Kubwa: N3700   (26.0% difference)
+   Airport Road -> Apo: N5600   |   Apo -> Airport Road: N4200   (25.0% difference)
+   Airport Road -> Asokoro: N5600   |   Asokoro -> Airport Road: N4200   (25.0% difference)
+   Airport Road -> Gudu: N5600   |   Gudu -> Airport Road: N4200   (25.0% difference)
+   Jabi -> Kubwa: N3700   |   Kubwa -> Jabi: N4900   (24.5% difference)
+   Jahi -> Kubwa: N3700   |   Kubwa -> Jahi: N4900   (24.5% difference)
+   Durumi -> Garki: N3300   |   Garki -> Durumi: N2500   (24.2% difference)
+   Durumi -> Kubwa: N3800   |   Kubwa -> Durumi: N5000   (24.0% difference)
+   Kado -> Kubwa: N3800   |   Kubwa -> Kado: N4900   (22.4% difference)
+   Gudu -> Kubwa: N3900   |   Kubwa -> Gudu: N5000   (22.0% difference)
+   Dutse -> Utako: N4400   |   Utako -> Dutse: N3500   (20.5% difference)
+   Galadimawa -> Kubwa: N4000   |   Kubwa -> Galadimawa: N5000   (20.0% difference)
+   Dutse -> Maitama: N4600   |   Maitama -> Dutse: N3700   (19.6% difference)
+   Dutse -> Wuse: N4600   |   Wuse -> Dutse: N3700   (19.6% difference)
+   Airport Road -> Karu: N5800   |   Karu -> Airport Road: N4700   (19.0% difference)
+   Airport Road -> Gwarinpa: N5300   |   Gwarinpa -> Airport Road: N4300   (18.9% difference)
+   Airport Road -> Lugbe: N5300   |   Lugbe -> Airport Road: N4300   (18.9% difference)
+   Airport Road -> Kuje: N5300   |   Kuje -> Airport Road: N6500   (18.5% difference)
+   Kubwa -> Kuje: N5400   |   Kuje -> Kubwa: N6600   (18.2% difference)
+   Dakwo -> Kubwa: N4100   |   Kubwa -> Dakwo: N5000   (18.0% difference)
+   Kubwa -> Mpape: N5000   |   Mpape -> Kubwa: N4100   (18.0% difference)
+   Durumi -> Dutse: N3800   |   Dutse -> Durumi: N4600   (17.4% difference)
+   Apo -> Kubwa: N4200   |   Kubwa -> Apo: N5000   (16.0% difference)
+   Asokoro -> Kubwa: N4200   |   Kubwa -> Asokoro: N5000   (16.0% difference)
+   Dutse -> Jabi: N4400   |   Jabi -> Dutse: N3700   (15.9% difference)
+   Dutse -> Jahi: N4400   |   Jahi -> Dutse: N3700   (15.9% difference)
+   Apo -> Dutse: N3900   |   Dutse -> Apo: N4600   (15.2% difference)
+   Asokoro -> Dutse: N3900   |   Dutse -> Asokoro: N4600   (15.2% difference)
+   Dutse -> Gudu: N4600   |   Gudu -> Dutse: N3900   (15.2% difference)
+
+3) MISSING ZONE — Mpape:
+   Mpape was in your pricing sheet but dropped from our zone list — confirm it
+   should stay.

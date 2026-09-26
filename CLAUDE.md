@@ -135,19 +135,66 @@ There is **no test runner and no linter** configured in any package (no Jest/Vit
 - Uses the **service role key** (not anon key) for Supabase access — so backend queries **bypass RLS entirely**. RLS policies only matter for clients that talk to Supabase directly (e.g. the rider app's Storage uploads).
 - Middleware order: helmet → cors → express.json → routes
 - Auth model: no email — riders/admins log in with **phone + password**, mapped to a Supabase Auth email of `{phone}@logistics.app`. `POST /api/auth/login` returns `{ session, user }`. Protected routes use `requireAuth` (verifies the `Bearer` token, loads the `users` profile onto `req.user`); admin-only routes add `requireAdmin`.
-- SQL lives in `backend/supabase/migrations/` (`001` schema + RLS, `002` seed zones/pricing, `003` storage policies, `004` rider deactivation, `005` deactivation RLS + `is_my_account_active()`). Migrations here **auto-apply to production on merge to `main`** via the Supabase–Vercel GitHub integration ("Deploy to production" enabled). Don't hand-apply a migration that's already merged — you'll run it twice.
+- SQL lives in `backend/supabase/migrations/` (`001` schema + RLS, `002` seed zones/pricing, `003` storage policies, `004` rider deactivation, `005` deactivation RLS + `is_my_account_active()`, `006` rider column allowlist, `007` interim zone pricing). Migrations here **auto-apply to production on merge to `main`** via the Supabase–Vercel GitHub integration ("Deploy to production" enabled). Don't hand-apply a migration that's already merged — you'll run it twice.
   - **The migration table is not a reliable record of production.** Production only tracks `005`; `001`–`004` were applied by hand in the SQL Editor before the integration existed and were never recorded. `anx-dev` tracks all five. Verify against the actual schema (`pg_policies`, `pg_proc`), not the migration list.
 - Delivery photos: Supabase Storage bucket `delivery-photos` (public-read, no size/mime limits). Riders upload directly from the app, so uploads require the Storage INSERT policy in migration `003`. **Never use `upsert: true` on these uploads** — Storage upserts require an UPDATE policy on `storage.objects` (even for brand-new paths), and only an INSERT policy exists, so upserts fail with an RLS violation.
 - There is **no separate riders table** — riders and admins are both rows in `users`, split by `role`. Rider deactivation is `users.is_active` (migration `004`): inactive riders keep all job/photo/payout history but are excluded from the assign-rider picker and rejected by `PATCH /api/jobs/:id/assign`. They can still obtain a session, but `requireAuth` rejects every protected route with `403 Account deactivated`, and migration `005` adds the same check to the rider job-UPDATE and delivery-photo Storage policies so a stale token can't bypass Express.
 - Rider management endpoints (admin-only): `GET /api/riders` (returns `is_active`, `active_jobs`, `total_jobs`), `PATCH /api/riders/:id/active` (deactivate/reactivate), `DELETE /api/riders/:id` (hard delete, **gated: 409 unless the rider has zero jobs of any status** — deactivation is the only option for riders with history; also removes the Supabase Auth account).
+
+### Zone pricing is provisional (migration `007`)
+
+`zone_pricing` holds **interim rates, not client-confirmed ones**. Migration `007` replaced
+the `002` placeholder (flat ₦1,000/₦2,000 over 14 zones) with formula output: **25 zones,
+600 symmetric cross-zone prices, ₦3,100–₦6,600** (625 rows with same-zone).
+
+    price = round_to_100(3000 + 60 × haversine_km × 1.4)
+
+`interim_pricing_generator.py` (beside the migration) holds the formula **and the zone
+coordinates**, and writes `interim_zone_pricing_final.json`. Run it with `--check` to
+confirm the JSON still matches. Keep it current — the coordinates once lived only on one
+machine, which blocked adding a zone until they were recovered.
+
+**`zone_pricing.source` tells you where a row came from** — that column exists so real
+prices stay distinguishable from these once they arrive:
+
+| `source` | Rows | Meaning |
+|---|---|---|
+| `interim-formula-2026-09` | 600 | cross-zone, from the formula output |
+| `interim-samezone-basefee-2026-09` | 25 | same-zone — **extrapolated, the client priced no same-zone trips** |
+
+Same-zone rows exist because the generated data is cross-zone only and the API looks up an
+exact `(from, to)` pair — without them a Wuse→Wuse job fails with "No pricing for this zone
+combination". They sit at **₦3,000**, which is what the formula yields at zero distance (the
+distance term vanishes, leaving the base fee), so the value is method-consistent and lands
+just under the ₦3,100 cheapest cross-zone fare. They keep a separate marker because the
+client's sheet priced **no** same-zone trips at all — charging the bare base fee for one is
+an extrapolation to confirm, not a quoted rate. An earlier revision used ₦3,100.
+
+**Replacing this is a full-table swap of `zone_pricing`, not a patch.** Delete every row and
+reload; the unique constraint on `(from_zone_id, to_zone_id)` added in `007` means partial
+upserts against a stale set will collide. **Do not recreate `zones`** — `jobs.pickup_zone_id`
+and `dropoff_zone_id` are FKs to `zones(id)`, so `007` upserts zones *by name* and leaves
+existing ids untouched. Keep that property in any successor migration.
+
+**Blocked on the client** — see `backend/supabase/client_questions.txt` for the itemised
+list. The raw data the client supplied could not be loaded as-is:
+- **21 pairs had no price** in either direction.
+- **58 pairs disagreed by direction** by more than 15% (worst: Garki→Kubwa ₦2,500 vs
+  Kubwa→Garki ₦5,000). The interim formula resolves this by being symmetric throughout;
+  whether the real pricing *should* be symmetric is itself an open question.
+- **`Mpape`** was dropped from the original interim list and has since been **added back as
+  the 25th zone**; the client still needs to confirm it belongs. Any zone present in `zones`
+  but absent from the generator makes `007`'s guard clause raise, rather than silently
+  leaving it unpriced.
+
 
 ### Known security follow-ups (not fixed)
 
 Supabase's security advisor flags four items, all `WARN`, none `ERROR`. Verified against
 production on 2026-09-20; **deliberately parked** until after the pitch. They predate and are
 unrelated to the role/column fixes in migration `006`. They apply to **both** Supabase
-projects (same schema), and the fix belongs in a migration (`007`) so it flows through the
-normal path rather than a console edit.
+projects (same schema), and the fix belongs in a migration (`008` — `007` is now the pricing
+migration) so it flows through the normal path rather than a console edit.
 
 | Advisor lint | Affects | Fix |
 |---|---|---|
